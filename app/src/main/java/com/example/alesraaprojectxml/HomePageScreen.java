@@ -37,7 +37,7 @@ public class HomePageScreen extends AppCompatActivity {
         lectureModels.add(new LectureModel("هندسة البرمجيات", "م. ريهام مقاط"));
         lectureModels.add(new LectureModel("تصميم تجربة المستخدم", "د. غسان أبو سمهدانة"));
         lectureModels.add(new LectureModel("تصميم تجربة المستخدم", "د. غسان أبو سمهدانة"));
-        System.out.println(""+"");
+        System.out.println("");
         binding.rcCourses.setAdapter(rc_courses);
         binding.rcCourses.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, true));
         binding.rcLectureName.setAdapter(rcLecture);
