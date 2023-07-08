@@ -10,24 +10,24 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class unsplichScreen extends AppCompatActivity {
-    Context context =unsplichScreen.this;
-    private Timer timer=new Timer();
+    Context context = unsplichScreen.this;
+    private Timer timer = new Timer();
     private TimerTask timerTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unsplich_screen);
-        timerTask=new TimerTask() {
+        timerTask = new TimerTask() {
             @Override
             public void run() {
-                Intent intent=new Intent(getBaseContext(),password.class);
+                Intent intent = new Intent(context, WelcomeScreensXML.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 finish();
 
             }
         };
-        timer.schedule(timerTask,2000);
+        timer.schedule(timerTask, 2000);
     }
 }
