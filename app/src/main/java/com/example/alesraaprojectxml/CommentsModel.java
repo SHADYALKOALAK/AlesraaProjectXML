@@ -24,4 +24,6 @@ public class CommentsModel {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    //
 }
