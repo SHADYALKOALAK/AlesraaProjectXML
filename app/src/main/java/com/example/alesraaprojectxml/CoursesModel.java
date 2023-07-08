@@ -1,6 +1,6 @@
 package com.example.alesraaprojectxml;
 
-public class CoursesModel {
+public class   CoursesModel {
     private int image;
     private String nameCourses;
     private String idCourses;
