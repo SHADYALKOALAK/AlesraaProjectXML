@@ -12,12 +12,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-public class WelcomeScreensXML extends AppCompatActivity {
+public class MainWelcomeScreens extends AppCompatActivity {
     private ViewPagerAdapter viewPagerAdapter;
     private LinearLayout linearLayout;
     private TextView skip;
     private ViewPager pager;
-    private Context context = WelcomeScreensXML.this;
+    private Context context = MainWelcomeScreens.this;
     private TextView[] dots;
 
     @Override
@@ -27,9 +27,9 @@ public class WelcomeScreensXML extends AppCompatActivity {
         skip = findViewById(R.id.tv_skip);
 
         skip.setOnClickListener(v -> {
-            Intent intent = new Intent(context, LoginScreen.class);
+            Intent intent = new Intent(context, HomePageScreen.class);
             startActivity(intent);
-           // finish();
+            finish();
         });
 
 

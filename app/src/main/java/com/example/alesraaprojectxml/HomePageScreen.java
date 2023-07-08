@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.alesraaprojectxml.databinding.ActivityHomePageScreenBinding;
 
@@ -56,5 +57,23 @@ public class HomePageScreen extends AppCompatActivity {
             facebook.setData(Uri.parse("https://www.youtube.com/watch?v=eLl-I9PwFyg"));
             startActivity(facebook);
         });
+        binding.imageProfile.setOnClickListener(v -> {
+            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+        });
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, HomeWorkScreen.class));
+        });
+        binding.iconModel.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://ar.israa.edu.ps"));
+            startActivity(intent);
+        });
+        binding.iconProfileScreen.setOnClickListener(v -> {
+            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+        });
+
+
+
     }
 }

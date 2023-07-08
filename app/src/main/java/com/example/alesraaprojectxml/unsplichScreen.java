@@ -21,7 +21,7 @@ public class unsplichScreen extends AppCompatActivity {
         timerTask = new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(context, WelcomeScreensXML.class);
+                Intent intent = new Intent(context, MainWelcomeScreens.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 finish();
