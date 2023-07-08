@@ -26,6 +26,7 @@ public class HomePageScreen extends AppCompatActivity {
         binding = ActivityHomePageScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         coursesModels = new ArrayList<>();
+        System.out.println("");
         lectureModels = new ArrayList<>();
         rcLecture = new RcLecture(context, lectureModels);
         rc_courses = new Rc_courses(context, coursesModels);
