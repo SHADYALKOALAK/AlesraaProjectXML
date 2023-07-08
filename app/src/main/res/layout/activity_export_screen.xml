@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@id/image_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="#FCF2DD"
+        android:background="#F5F5F5"
         android:layout_marginTop="12dp"
         android:text="@string/text_7"
         android:gravity="center"
@@ -221,6 +221,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <EditText
+                android:id="@+id/edit_Title"
                 android:layout_width="278dp"
                 android:layout_height="57dp"
                 android:layout_gravity="center_horizontal"
@@ -235,33 +236,36 @@
                 android:paddingEnd="10dp"
                 android:paddingTop="5dp"/>
             <EditText
+                android:id="@+id/edit_description"
                 android:layout_width="278dp"
                 android:layout_height="105dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_10"
                 android:drawableStart="@drawable/icon_1"
                 android:layout_marginTop="7dp"
-                android:paddingBottom="30dp"
+                android:paddingBottom="60dp"
                 android:paddingStart="15dp"
                 android:hint="التفاصيل"
                 android:gravity="top"
                 android:textColorHint="#010101"
                 android:paddingEnd="10dp"
                 android:paddingTop="5dp"/>
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="278dp"
                 android:layout_height="57dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_10"
                 android:layout_marginTop="7dp"
-                android:paddingBottom="30dp"
-                android:paddingStart="10dp"
                 android:hint="رفع الملف"
-                android:gravity="top"
                 android:textColorHint="#010101"
                 android:paddingEnd="10dp"
                 android:paddingTop="5dp">
-                <EditText
+                <TextView
+                    android:paddingBottom="29dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="10dp"
@@ -269,27 +273,93 @@
                     android:gravity="top"
                     android:textColorHint="#010101"
                     android:paddingEnd="10dp"
-                    android:paddingTop="5dp"/>
+                    android:paddingTop="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <Button
+                    android:id="@+id/btn_chooseFile"
+                    android:layout_width="91dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="5dp"
+                    android:text="اختيار الملف "
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:inputType="textWebEmailAddress"
+                android:id="@+id/edit_Link"
+                android:layout_width="278dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edit_10"
+                android:layout_marginTop="7dp"
+                android:paddingBottom="30dp"
+                android:paddingStart="15dp"
+                android:hint="إدراج الرابط"
+                android:gravity="top"
+                android:textColorHint="#010101"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"/>
+            <EditText
+                android:id="@+id/edit_MoreInfo"
+                android:layout_width="278dp"
+                android:layout_height="105dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edit_10"
+                android:layout_marginTop="7dp"
+                android:paddingBottom="30dp"
+                android:paddingStart="15dp"
+                android:hint="معلومات إضافية"
+                android:gravity="top"
+                android:textColorHint="#010101"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end"
+                android:layout_marginEnd="35dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تعني أن الحقل مطلوب"
+                    android:textSize="15sp"
+                    android:textColor="#EE2828"
+                    android:paddingEnd="4dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_1"
+                    />
+
             </LinearLayout>
+            <Button
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="#B46A3C"
+                android:text="رفع"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:gravity="center"
+                android:background="@drawable/btn_shape"/>
 
 
-<!--            <EditText-->
-<!--                android:layout_width="278dp"-->
-<!--                android:layout_height="57dp"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:background="@drawable/edit_10"-->
-<!--                android:layout_marginTop="7dp"-->
-<!--                android:paddingBottom="30dp"-->
-<!--                android:paddingStart="10dp"-->
-<!--                android:hint="رفع الملف"-->
-<!--                android:gravity="top"-->
-<!--                android:textColorHint="#010101"-->
-<!--                android:paddingEnd="10dp"-->
-<!--                android:paddingTop="5dp" />-->
+
+
+
+
 
 
 
         </LinearLayout>
+
 
 
 
