@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.alesraaprojectxml.databinding.ActivityHomePageScreenBinding;
 
@@ -41,6 +44,17 @@ public class HomePageScreen extends AppCompatActivity {
         binding.rcCourses.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, true));
         binding.rcLectureName.setAdapter(rcLecture);
         binding.rcLectureName.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
-
+        binding.icNot.setOnClickListener(v -> {
+            startActivity(new Intent(context, Notices.class));
+        });
+        binding.iconMenu.setOnClickListener(v -> {
+            startActivity(new Intent(context, RegisteredCourses.class));
+        });
+        binding.yo.setOnClickListener(v -> {
+            Intent facebook = new Intent();
+            facebook.setAction(Intent.ACTION_VIEW);
+            facebook.setData(Uri.parse("https://www.youtube.com"));
+            startActivity(facebook);
+        });
     }
 }

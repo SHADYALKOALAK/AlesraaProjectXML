@@ -79,7 +79,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/edit_login"
-        android:drawableStart="@drawable/view"
+        android:drawableStart="@drawable/ic_baseline_visibility_off_24"
         android:hint="  ادخل كلمة المرور"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"

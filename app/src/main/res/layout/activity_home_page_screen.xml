@@ -78,6 +78,7 @@
         app:layout_constraintTop_toTopOf="@id/ic_Not" />
 
     <ImageView
+        android:id="@+id/icon_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -188,9 +189,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:text="المودل"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
+                android:text="المودل"
                 android:textColor="@color/black" />
 
         </LinearLayout>
@@ -211,9 +212,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:text="الواجبات"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
+                android:text="الواجبات"
                 android:textColor="@color/black" />
 
         </LinearLayout>
@@ -234,12 +235,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:text="التعليم الالكتروني"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center"
-                android:textAlignment="center"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
+                android:text="التعليم الالكتروني"
+                android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -260,10 +261,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:text="صفحة الطالب"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/black"
                 android:layout_weight="1"
+                android:text="صفحة الطالب"
+                android:textColor="@color/black"
                 android:textSize="12sp" />
 
         </LinearLayout>

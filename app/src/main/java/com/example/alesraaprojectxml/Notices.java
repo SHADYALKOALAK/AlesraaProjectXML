@@ -2,7 +2,7 @@ package com.example.alesraaprojectxml;
 
 import android.content.Context;
 import android.os.Bundle;
-
+import android.view.View;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -75,6 +75,10 @@ public class Notices extends AppCompatActivity {
         binding.recycler2.setAdapter(adapterNotices);
         LinearLayoutManager linearLayoutManager_2=new LinearLayoutManager(context);
         binding.recycler2.setLayoutManager(linearLayoutManager_2);
+        binding.iconArrow.setOnClickListener(v -> {
+           finish();
+        });
+
 
 
 
