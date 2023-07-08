@@ -52,6 +52,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/edit_login"
+        android:inputType="number"
         android:hint="  ادخل رقمك الجامعي"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -99,7 +100,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btn_entrance"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="center_vertical"
