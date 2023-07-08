@@ -25,6 +25,8 @@
         android:textColor="@color/primColor"
         android:textSize="26sp"
         android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="@id/image_welcome"
         app:layout_constraintStart_toStartOf="@id/image_welcome"
         app:layout_constraintTop_toBottomOf="@id/image_welcome" />
@@ -38,7 +40,7 @@
         android:textAlignment="center"
         android:textColor="@color/grey"
         android:textSize="13sp"
-        android:layout_marginBottom="50dp"
+        android:paddingBottom="30dp"
         app:layout_constraintEnd_toEndOf="@id/tv_welcome"
         app:layout_constraintStart_toStartOf="@id/tv_welcome"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
