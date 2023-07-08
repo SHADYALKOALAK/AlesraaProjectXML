@@ -1,5 +1,6 @@
-package com.example.alesraaprojectxml;
 
+
+package com.example.alesraaprojectxml;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -7,9 +8,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 
 public class WelcomeScreensXML extends AppCompatActivity {
     private ViewPagerAdapter viewPagerAdapter;
@@ -28,7 +29,7 @@ public class WelcomeScreensXML extends AppCompatActivity {
         skip.setOnClickListener(v -> {
             Intent intent = new Intent(context, LoginScreen.class);
             startActivity(intent);
-            finish();
+           // finish();
         });
 
 

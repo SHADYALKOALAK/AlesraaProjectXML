@@ -21,10 +21,14 @@ public class Admin_1 extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.imageVideo.setOnClickListener(v -> {
-
+            Intent facebook = new Intent();
+            facebook.setAction(Intent.ACTION_VIEW);
+            facebook.setData(Uri.parse("https:/www.youtube.com/watch?v=eLl-I9PwFyg"));
+            startActivity(facebook);
         });
 
         binding.imageExportFile.setOnClickListener(v -> {
+            startActivity(new Intent(context, UploodScreen.class));
 
         });
     }

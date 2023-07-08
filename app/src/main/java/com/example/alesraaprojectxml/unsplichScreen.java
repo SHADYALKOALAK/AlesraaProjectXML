@@ -25,7 +25,6 @@ public class unsplichScreen extends AppCompatActivity {
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 finish();
-
             }
         };
         timer.schedule(timerTask, 2000);
