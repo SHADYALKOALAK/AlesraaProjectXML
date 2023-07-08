@@ -25,7 +25,6 @@ public class ExamScreen extends AppCompatActivity {
         setContentView(binding.getRoot());
         commentsModels = new ArrayList<>();
         rc_comment = new Rc_Comment(context, commentsModels);
-
         commentsModels.add(new CommentsModel(" هدية خليل مقاط /", "يعطيك ألف عافية دكتور"));
         commentsModels.add(new CommentsModel("دانية محمود نصر/", "يعطيك ألف عافية دكتور , تم تسليم الواجب"));
         commentsModels.add(new CommentsModel("دانية محمود نصر/", "يعطيك ألف عافية دكتور , تم تسليم الواجب"));
