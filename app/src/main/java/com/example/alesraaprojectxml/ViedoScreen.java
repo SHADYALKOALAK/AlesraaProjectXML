@@ -32,5 +32,15 @@ public class ViedoScreen extends AppCompatActivity {
 
         binding.rcComments.setAdapter(rc_comment);
         binding.rcComments.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL,false));
+        binding.btnSend.setOnClickListener(v -> {
+            String comment = binding.edComments.getText().toString().trim();
+            if (comment.isEmpty()) {
+                binding.edComments.setError("أضف تعليق من فضلك ");
+            } else {
+                commentsModels.add(new CommentsModel(comment));
+                rc_comment.notifyDataSetChanged();
+            }
+
+        });
     }
 }

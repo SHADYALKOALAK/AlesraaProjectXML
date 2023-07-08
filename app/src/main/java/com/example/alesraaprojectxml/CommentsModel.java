@@ -9,6 +9,10 @@ public class CommentsModel {
         this.comment = comment;
     }
 
+    public CommentsModel(String comment) {
+        this.comment = comment;
+    }
+
     public String getName() {
         return name;
     }
