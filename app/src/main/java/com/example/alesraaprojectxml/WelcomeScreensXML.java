@@ -26,7 +26,7 @@ public class WelcomeScreensXML extends AppCompatActivity {
         skip = findViewById(R.id.tv_skip);
 
         skip.setOnClickListener(v -> {
-            Intent intent = new Intent(context, MainActivity.class);
+            Intent intent = new Intent(context, LoginScreen.class);
             startActivity(intent);
             finish();
         });
