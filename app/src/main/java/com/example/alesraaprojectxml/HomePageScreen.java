@@ -53,7 +53,7 @@ public class HomePageScreen extends AppCompatActivity {
         binding.yo.setOnClickListener(v -> {
             Intent facebook = new Intent();
             facebook.setAction(Intent.ACTION_VIEW);
-            facebook.setData(Uri.parse("https://www.youtube.com"));
+            facebook.setData(Uri.parse("https://www.youtube.com/watch?v=eLl-I9PwFyg"));
             startActivity(facebook);
         });
     }
