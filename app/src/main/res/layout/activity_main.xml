@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/logo_1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تسجيل الدخول "
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="72dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_2"
+        android:layout_gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" أهـــلاً وسهـــــلاً بـك عـزيــــزي الطـــالب "
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+       android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" الرقم الجامعي "
+        android:textColor="@color/black"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:layout_marginEnd="24dp"/>
+    <EditText
+        android:id="@+id/edit_NumberOfUneversity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_login"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="7dp"
+        android:hint="  ادخل رقمك الجامعي"
+        android:textColorHint="#CE9978"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="كلمة المرور "
+        android:textColor="@color/black"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:layout_marginEnd="24dp"/>
+    <EditText
+        android:id="@+id/edit_Password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_login"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="7dp"
+        android:hint="  ادخل كلمة المرور"
+        android:textColorHint="#CE9978"
+        android:textSize="15dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/view"
+        android:paddingStart="12dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="هل نسيت كلمة المرور؟"
+        android:textColor="#C7000000"
+        android:layout_gravity="start"
+        android:layout_marginTop="9dp"
+        android:textSize="14sp"
+        android:layout_marginStart="29dp"/>
+    <Button
+        android:id="@+id/btn_entrance"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="78dp"
+        android:background="@drawable/btn_login"
+        android:text="دخول"
+        android:layout_gravity="center_vertical"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="21dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
