@@ -11,4 +11,6 @@ public class password_2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password2);
     }
+
+
 }
