@@ -32,6 +32,7 @@ public class DBase extends SQLiteOpenHelper {
                 + COL_NAME + " TEXT , "
                 + COL_NUMBER + " TEXT , "
                 + COL_PASSWORD + " TEXT) ");
+        //
     }
 
     @Override
@@ -48,12 +49,14 @@ public class DBase extends SQLiteOpenHelper {
         values.put("massage", model.getComment());
         long re = database.insert(TN_COMMENT, null, values);
         return re != -1;
+        //
     }
 
     public Cursor getComment() {
         SQLiteDatabase database = getReadableDatabase();
         Cursor cursor = database.rawQuery("Select * From " + TN_COMMENT, null);
         return cursor;
+        //
     }
 
     public boolean insertUser(UserSignUpModel user) {
@@ -64,6 +67,7 @@ public class DBase extends SQLiteOpenHelper {
         contentValues.put(COL_NUMBER, user.getNumber());
         long re = sqLiteDatabase.insert(Table_NAMEUSRT, null, contentValues);
         return re != -1;
+        //insertUser//
     }
 
     public Cursor getUser() {
