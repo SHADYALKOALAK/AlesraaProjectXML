@@ -25,8 +25,7 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
     private List<LectureModel> lectureModels;
     private RcLecture rcLecture;
     Rc_courses.Handle handle;
-
-
+    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,8 +75,6 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
         binding.iconProfileScreen.setOnClickListener(v -> {
             Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
         });
-
-
 
     }
 
