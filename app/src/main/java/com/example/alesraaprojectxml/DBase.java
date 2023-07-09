@@ -23,6 +23,7 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME_PERSONAL = "namePerson";
     public static final String COL_TITlE_MASSAGE = "titleMassage";
 
+
     //DATA
 
     public DBase(Context context) {

@@ -212,6 +212,7 @@
         tools:layout_editor_absoluteX="-5dp">
 
         <Button
+            android:id="@+id/choose_File"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

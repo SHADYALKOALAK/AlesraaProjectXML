@@ -1,5 +1,8 @@
 package com.example.alesraaprojectxml;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +27,7 @@ public class HomeWorkScreen extends AppCompatActivity {
     private List<CommentsModel> commentsModels;
     private Rc_Comment rc_comment;
     private DBase dataBase;
+    private ActivityResultLauncher<String> filePickerLauncher;
 
 
     @Override
@@ -80,6 +84,45 @@ public class HomeWorkScreen extends AppCompatActivity {
             }
 
         });
+        binding.chooseFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filePickerLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(),
+                        uri -> {
+                            if (uri != null) {
+                                // Handle the selected file here
+                                String filePath = uri.getPath();
+                                // Upload the file to your application or perform further operations
+                                Toast.makeText(context, "Selected file: " + filePath, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                // Launch file picker when a button or any UI element is clicked
+                openFilePicker();
+            }
+        });
+
 
     }
+    private void openFilePicker() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        filePickerLauncher.launch("*/*");
+    }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (requestCode == REQUEST_PICK_FILE && resultCode == RESULT_OK) {
+//            if (data != null) {
+//                Uri fileUri = data.getData();
+//                if (fileUri != null) {
+//                    // Handle the selected file here
+//                    String filePath = fileUri.getPath();
+//                    // Upload the file to your application or perform further operations
+//                    Toast.makeText(this, "Selected file: " + filePath, Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        }
+//        super.onActivityResult(requestCode, resultCode, data);
+//    }
 }
