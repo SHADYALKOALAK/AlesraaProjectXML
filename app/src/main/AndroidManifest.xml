@@ -97,7 +97,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".unsplichScreen"
+            android:name=".UnSplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -111,13 +111,6 @@
         </activity>
         <activity
             android:name=".password"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -174,6 +167,13 @@
         </activity>
         <activity
             android:name=".MainWelcomeScreens"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoginScreen"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

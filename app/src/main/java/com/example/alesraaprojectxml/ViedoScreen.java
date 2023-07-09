@@ -38,6 +38,7 @@ public class ViedoScreen extends AppCompatActivity {
                 binding.edComments.setError("أضف تعليق من فضلك ");
             } else {
                 commentsModels.add(new CommentsModel(comment));
+                binding.edComments.setText("");
                 rc_comment.notifyDataSetChanged();
             }
 

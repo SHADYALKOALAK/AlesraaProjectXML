@@ -9,8 +9,8 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class unsplichScreen extends AppCompatActivity {
-    Context context = unsplichScreen.this;
+public class UnSplashScreen extends AppCompatActivity {
+    Context context = UnSplashScreen.this;
     private Timer timer = new Timer();
     private TimerTask timerTask;
 
