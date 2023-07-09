@@ -1,7 +1,9 @@
 package com.example.alesraaprojectxml;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,9 @@ public class RcLecture extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         ViewHolder holder1 = (ViewHolder) holder;
         holder1.binding.tvNameCourses.setText(lectureModels.get(position).getNameCourses());
         holder1.binding.tvName.setText(lectureModels.get(position).getName());
+        holder1.binding.iconEmail.setOnClickListener(v -> {
+            context.startActivity(new Intent(context, MassageTheAdmin.class));
+        });
     }
 
     @Override

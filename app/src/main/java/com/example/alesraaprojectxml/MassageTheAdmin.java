@@ -1,14 +1,94 @@
 package com.example.alesraaprojectxml;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import com.example.alesraaprojectxml.databinding.ActivityMassageTheAdminBinding;
+import com.example.alesraaprojectxml.databinding.CustomdailogBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MassageTheAdmin extends AppCompatActivity {
+    private ActivityMassageTheAdminBinding binding;
+    private Context context = MassageTheAdmin.this;
+    private AdapterMassageStudentWithAdmin admin;
+    private ArrayList<ItemMassageStudentWithAdmin> list;
+    private CustomdailogBinding customDialog;
+    private AlertDialog dialog;
+    private DBase dBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_massage_the_admin);
+        binding = ActivityMassageTheAdminBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        list = new ArrayList<>();
+        dBase = new DBase(context);
+        admin = new AdapterMassageStudentWithAdmin(list,context);
+
+        binding.btnSend.setOnClickListener(v -> {
+            String nameParson = binding.editNamePerson.getText().toString().trim();
+            String titelMassage = binding.editTitleMassage.getText().toString().trim();
+            String massage = binding.editMassage.getText().toString().trim();
+            if (nameParson.isEmpty()) {
+                binding.editNamePerson.setError("أدخل من فضلك إسم المرسل");
+            } else if (titelMassage.isEmpty()) {
+                binding.editTitleMassage.setError("أدخل من فضلك عنوان الرسالة");
+            } else if (massage.isEmpty()) {
+                binding.editMassage.setError("أدخل من فضلك الرسالة");
+            } else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                customDialog = CustomdailogBinding.inflate(getLayoutInflater());
+                builder.setView(customDialog.getRoot());
+                customDialog.btnYes.setOnClickListener(v1 -> {
+                    list.add(new ItemMassageStudentWithAdmin(nameParson,titelMassage,massage));
+                    if (dBase.insertMassage(new ItemMassageStudentWithAdmin(nameParson,titelMassage,massage))) {
+                        Toast.makeText(context, "تم إرسال الرسالة", Toast.LENGTH_SHORT).show();
+                        admin.notifyDataSetChanged();
+                        dialog.dismiss();
+                        finish();
+                    }
+                });
+                customDialog.btnNo.setOnClickListener(v12 -> {
+                    dialog.dismiss();
+                });
+                dialog = builder.create();
+                dialog.show();
+            }
+
+        });
+        binding.imageProfile.setOnClickListener(v -> {
+            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+        });
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, HomeWorkScreen.class));
+        });
+        binding.iconModel.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://ar.israa.edu.ps"));
+            startActivity(intent);
+        });
+        binding.iconProfileScreen.setOnClickListener(v -> {
+            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+        });
+        binding.iconEducation.setOnClickListener(v -> {
+            startActivity(new Intent(context, HomePageScreen.class));
+        });
+        binding.icNot.setOnClickListener(v -> {
+            startActivity(new Intent(context, Notices.class));
+        });
+        binding.iconArrow.setOnClickListener(v -> {
+            finish();
+        });
+
     }
 }

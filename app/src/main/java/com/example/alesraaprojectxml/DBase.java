@@ -15,9 +15,15 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME = "user_name";
     public static final String COL_NUMBER = "numberUser";
     public static final String COL_PASSWORD = "user_password";
-    public static final int DB_VERSION = 6;
+    public static final int DB_VERSION = 9;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
+    public static final String TN_MASSAGE = "massageToAdmin";
+    public static final String COL_MASSAGE = "colMassage";
+    public static final String COL_NAME_PERSONAL = "namePerson";
+    public static final String COL_TITlE_MASSAGE = "titleMassage";
+
+
     //DATA
 
     public DBase(Context context) {
@@ -32,6 +38,10 @@ public class DBase extends SQLiteOpenHelper {
                 + COL_NAME + " TEXT , "
                 + COL_NUMBER + " TEXT , "
                 + COL_PASSWORD + " TEXT) ");
+        db.execSQL("CREATE TABLE " + TN_MASSAGE + " ( " + COL_MASSAGE + " TEXT , "
+                + COL_NAME_PERSONAL + " TEXT , "
+                + COL_TITlE_MASSAGE + " TEXT)");
+
         //
     }
 
@@ -39,6 +49,7 @@ public class DBase extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TN_COMMENT);
         db.execSQL("DROP TABLE IF EXISTS " + Table_NAMEUSRT);
+        db.execSQL("DROP TABLE IF EXISTS " + TN_MASSAGE);
         onCreate(db);
 
     }
@@ -75,5 +86,23 @@ public class DBase extends SQLiteOpenHelper {
         Cursor cursor = dp.rawQuery("Select * From " + Table_NAMEUSRT, null);
         return cursor;
         //getUSER//
+    }
+
+    public boolean insertMassage(ItemMassageStudentWithAdmin massage) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_MASSAGE, massage.getMassage());
+        values.put(COL_NAME_PERSONAL, massage.getNameStudent());
+        values.put(COL_TITlE_MASSAGE, massage.getTitleMassage());
+        long re = database.insert(TN_MASSAGE, null, values);
+        return re != -1;
+
+    }
+
+    public Cursor getMassage() {
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor = dp.rawQuery("Select * From " + TN_MASSAGE, null);
+        return cursor;
+
     }
 }
