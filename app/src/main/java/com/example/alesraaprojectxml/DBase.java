@@ -70,5 +70,6 @@ public class DBase extends SQLiteOpenHelper {
         SQLiteDatabase dp = this.getReadableDatabase();
         Cursor cursor = dp.rawQuery("Select * From " + Table_NAMEUSRT, null);
         return cursor;
+        //getUSER
     }
 }
