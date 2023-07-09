@@ -34,6 +34,7 @@ public class ViedoScreen extends AppCompatActivity {
             @SuppressLint("Range") String comment = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
             commentsModels.add(new CommentsModel(comment));
         }
+//        Cursor
 
 
         //commentsModels.add(new CommentsModel(" هدية خليل مقاط /", "يعطيك ألف عافية دكتور"));
