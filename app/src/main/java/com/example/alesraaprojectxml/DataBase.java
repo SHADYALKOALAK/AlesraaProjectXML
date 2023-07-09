@@ -26,7 +26,10 @@ public class DataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment Primary key AUTOINCREMENT,comment TEXT)");
+        String table_comment = " create table " + TN_COMMENT + "(" +
+                COL_ID + " integer primary key autoincrement, " +
+                COL_COMMENT + " text " + ")";
+        db.execSQL(table_comment);
     }
 
     @Override
