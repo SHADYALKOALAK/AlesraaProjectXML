@@ -49,6 +49,7 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
         lectureModels.add(new LectureModel("تصميم تجربة المستخدم", "د. غسان أبو سمهدانة"));
         lectureModels.add(new LectureModel("تصميم تجربة المستخدم", "د. غسان أبو سمهدانة"));
         binding.rcCourses.setAdapter(rc_courses);
+        //
         binding.rcCourses.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, true));
         binding.rcLectureName.setAdapter(rcLecture);
         Cursor cursor = dBase.getComment();
