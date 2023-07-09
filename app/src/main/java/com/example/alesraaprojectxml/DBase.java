@@ -14,7 +14,7 @@ public class DBase extends SQLiteOpenHelper {
     private static final String COL_NAME = "user_name";
     private static final String COL_EMAIL = "user_email";
     private static final String COL_PASSWORD = "user_password";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION =5 ;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
 
@@ -25,7 +25,7 @@ public class DBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment Primary key AUTOINCREMENT,massage TEXT)");
+        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment integer Primary key AUTOINCREMENT,massage TEXT)");
 
     }
 
@@ -38,14 +38,16 @@ public class DBase extends SQLiteOpenHelper {
     public boolean insertComment(CommentsModel model) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("comment", model.getComment());
+        values.put(COL_COMMENT, model.getComment());
+        values.put(COL_ID, model.getIdComments());
         long re = database.insert(TN_COMMENT, null, values);
         return re != -1;
     }
 
     public Cursor getComment() {
-        SQLiteDatabase database = getReadableDatabase();
-        Cursor cursor = database.rawQuery(TN_COMMENT, null, null);
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor;
+        cursor = dp.rawQuery(" Select * From " + TN_COMMENT, null);
         return cursor;
     }
 }

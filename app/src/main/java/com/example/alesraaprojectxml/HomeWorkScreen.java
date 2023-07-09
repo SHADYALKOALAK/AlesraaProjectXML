@@ -21,7 +21,7 @@ public class HomeWorkScreen extends AppCompatActivity {
     private Context context = HomeWorkScreen.this;
     private List<CommentsModel> commentsModels;
     private Rc_Comment rc_comment;
-    private DataBase dataBase;
+    private DBase dataBase;
 
 
     @Override
@@ -31,7 +31,7 @@ public class HomeWorkScreen extends AppCompatActivity {
         setContentView(binding.getRoot());
         commentsModels = new ArrayList<>();
         rc_comment = new Rc_Comment(context, commentsModels);
-        dataBase = new DataBase(context);
+        dataBase = new DBase(context);
 
         commentsModels.add(new CommentsModel(" هدية خليل مقاط /", "يعطيك ألف عافية دكتور"));
         commentsModels.add(new CommentsModel("دانية محمود نصر/", "يعطيك ألف عافية دكتور , تم تسليم الواجب"));
