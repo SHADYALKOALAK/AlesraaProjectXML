@@ -78,14 +78,12 @@ public class DBase extends SQLiteOpenHelper {
         contentValues.put(COL_NUMBER, user.getNumber());
         long re = sqLiteDatabase.insert(Table_NAMEUSRT, null, contentValues);
         return re != -1;
-        //insertUser//
     }
 
     public Cursor getUser() {
         SQLiteDatabase dp = this.getReadableDatabase();
         Cursor cursor = dp.rawQuery("Select * From " + Table_NAMEUSRT, null);
         return cursor;
-        //getUSER//
     }
 
     public boolean insertMassage(ItemMassageStudentWithAdmin massage) {
