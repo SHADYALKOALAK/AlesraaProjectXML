@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,7 +22,8 @@ public class RegisteredCourses extends AppCompatActivity implements Rc_courses.H
     private Context context = RegisteredCourses.this;
     private Rc_courses rc_courses;
     private List<CoursesModel> coursesModels;
-    Rc_courses.Handle handle;
+    private Rc_courses.Handle handle;
+    private DBase dBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,9 @@ public class RegisteredCourses extends AppCompatActivity implements Rc_courses.H
         binding = ActivityRegisteredCoursesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         coursesModels = new ArrayList<>();
-        rc_courses = new Rc_courses(context, coursesModels,handle);
-        rc_courses = new Rc_courses(context, coursesModels,handle);
+        dBase = new DBase(context);
+        rc_courses = new Rc_courses(context, coursesModels, handle);
+        rc_courses = new Rc_courses(context, coursesModels, handle);
         coursesModels.add(new CoursesModel(R.drawable.img_3, "تصميم تجربة المستخدم", "BMOB4313-s231"));
         coursesModels.add(new CoursesModel(R.drawable.img_3, "هندسة البرمجيات", "BMOB4313-s231"));
         coursesModels.add(new CoursesModel(R.drawable.img_3, "التجارة النقالة", "BMOB4313-s231"));
@@ -44,6 +48,11 @@ public class RegisteredCourses extends AppCompatActivity implements Rc_courses.H
         coursesModels.add(new CoursesModel(R.drawable.img_3, "تصميم تجربة المستخدم", "BMOB4313-s231"));
         binding.rcRegisteredCourses.setAdapter(rc_courses);
         binding.rcRegisteredCourses.setLayoutManager(new GridLayoutManager(context, 2));
+        Cursor cursor = dBase.getComment();
+        while (cursor.moveToNext()) {
+            @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
+            binding.tvName.setText(nameProfile);
+        }
         binding.iconArrow.setOnClickListener(v -> {
             finish();
         });
@@ -55,7 +64,7 @@ public class RegisteredCourses extends AppCompatActivity implements Rc_courses.H
 
     @Override
     public void clickHandle(int position, String nameCourse, String idCourse) {
-        startActivity(new Intent(getBaseContext(),e_Learning.class));
+        startActivity(new Intent(getBaseContext(), e_Learning.class));
 
     }
 }

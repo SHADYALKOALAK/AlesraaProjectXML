@@ -43,6 +43,7 @@ public class MassagesStudentWethAdmin extends AppCompatActivity {
             @SuppressLint("Range") String massage = cursor.getString(cursor.getColumnIndex(DBase.COL_MASSAGE));
             @SuppressLint("Range") String titelMassage = cursor.getString(cursor.getColumnIndex(DBase.COL_TITlE_MASSAGE));
             arrayList.add(new ItemMassageStudentWithAdmin(nameProfile, titelMassage, massage));
+            binding.tvName.setText(nameProfile);
         }
         binding.rv.setAdapter(adapterMassageStudentWithAdmin);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);

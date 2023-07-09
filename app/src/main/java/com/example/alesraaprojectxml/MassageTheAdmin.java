@@ -3,8 +3,10 @@ package com.example.alesraaprojectxml;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -77,6 +79,11 @@ public class MassageTheAdmin extends AppCompatActivity {
             intent.setData(Uri.parse("https://ar.israa.edu.ps"));
             startActivity(intent);
         });
+        Cursor cursor = dBase.getComment();
+        while (cursor.moveToNext()) {
+            @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
+            binding.tvName.setText(nameProfile);
+        }
         binding.iconProfileScreen.setOnClickListener(v -> {
             Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
         });

@@ -2,8 +2,10 @@ package com.example.alesraaprojectxml;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 
 public class e_Learning extends AppCompatActivity {
     private Context context = e_Learning.this;
+    private DBase dBase;
 
 
     @Override
@@ -24,6 +27,7 @@ public class e_Learning extends AppCompatActivity {
         ActivityElearningSBinding binding;
         binding = ActivityElearningSBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        dBase = new DBase(context);
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String id = intent.getStringExtra("id");
@@ -32,10 +36,15 @@ public class e_Learning extends AppCompatActivity {
         binding.iconArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,HomePageScreen.class));
+                startActivity(new Intent(context, HomePageScreen.class));
 
             }
         });
+        Cursor cursor = dBase.getComment();
+        while (cursor.moveToNext()) {
+            @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
+            binding.tvName.setText(nameProfile);
+        }
         binding.imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +54,7 @@ public class e_Learning extends AppCompatActivity {
         binding.icNot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,Notices.class));
+                startActivity(new Intent(context, Notices.class));
             }
         });
         binding.iconModel.setOnClickListener(v -> {
@@ -63,11 +72,9 @@ public class e_Learning extends AppCompatActivity {
         binding.iconEducation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,HomePageScreen.class));
+                startActivity(new Intent(context, HomePageScreen.class));
             }
         });
-
-
 
 
     }

@@ -36,6 +36,7 @@ public class DiscussionScreen extends AppCompatActivity {
             @SuppressLint("Range") String comment = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
             @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
             commentsModels.add(new CommentsModel(nameProfile, comment));
+            binding.tvName.setText(nameProfile);
         }
 //       
         binding.rcComments.setAdapter(rc_comment);
@@ -44,6 +45,7 @@ public class DiscussionScreen extends AppCompatActivity {
         while (user.moveToNext()) {
             name = user.getString(user.getColumnIndex(DBase.COL_NAME));
         }
+
         binding.btnSend.setOnClickListener(v -> {
             String comment = binding.edComments.getText().toString().trim();
             if (comment.isEmpty()) {
