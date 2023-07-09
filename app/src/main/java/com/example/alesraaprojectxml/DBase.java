@@ -17,7 +17,6 @@ public class DBase extends SQLiteOpenHelper {
     private static final int DB_VERSION = 3;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
-    //DATA
 
     public DBase(Context context) {
         super(context, DATABASE_NAME, null, DB_VERSION);
