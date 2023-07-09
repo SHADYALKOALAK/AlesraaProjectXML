@@ -47,7 +47,6 @@ public class MassagesStudentWethAdmin extends AppCompatActivity {
         binding.rv.setAdapter(adapterMassageStudentWithAdmin);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         binding.rv.setLayoutManager(linearLayoutManager);
-
-
+        //
     }
 }

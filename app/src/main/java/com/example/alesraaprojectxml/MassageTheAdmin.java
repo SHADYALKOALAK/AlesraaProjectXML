@@ -89,6 +89,6 @@ public class MassageTheAdmin extends AppCompatActivity {
         binding.iconArrow.setOnClickListener(v -> {
             finish();
         });
-
+        //
     }
 }

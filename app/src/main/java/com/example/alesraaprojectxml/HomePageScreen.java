@@ -27,6 +27,7 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
     Rc_courses.Handle handle;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +77,7 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
             Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
         });
 
-
+        //
 
     }
 
