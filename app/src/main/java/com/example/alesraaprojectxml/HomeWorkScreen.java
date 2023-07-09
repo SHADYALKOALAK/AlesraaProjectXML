@@ -70,7 +70,7 @@ public class HomeWorkScreen extends AppCompatActivity {
         binding.iconModel.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://ar.israa.edu.ps"));
+            intent.setData(Uri.parse("https://student.israa.edu.ps"));
             startActivity(intent);
         });
 

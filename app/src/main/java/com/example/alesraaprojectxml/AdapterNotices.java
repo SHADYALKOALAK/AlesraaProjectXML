@@ -1,11 +1,13 @@
 package com.example.alesraaprojectxml;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,10 +17,10 @@ import com.example.alesraaprojectxml.databinding.RvRecyclerviewDesignNoticesScre
 import java.util.ArrayList;
 
 public class AdapterNotices extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    Context context;
-    ArrayList<ItemRecyclerNoticesScreen> arrayList;
-    RvRecyclerviewDesignNoticesScreenBinding binding;
-    ViewHandle viewHandle;
+    private Context context;
+    private ArrayList<ItemRecyclerNoticesScreen> arrayList;
+    private RvRecyclerviewDesignNoticesScreenBinding binding;
+    private ViewHandle viewHandle;
 
 
     public AdapterNotices(Context context, ArrayList<ItemRecyclerNoticesScreen> arrayList, ViewHandle viewHandle) {
@@ -36,19 +38,16 @@ public class AdapterNotices extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         MyAdapter myAdapter = (MyAdapter) holder;
         myAdapter.binding.tvNameCourse.setText(arrayList.get(position).getNameCourse());
         myAdapter.binding.tvDate.setText(arrayList.get(position).getDate());
         myAdapter.binding.tvDescription.setText(arrayList.get(position).getDescription());
         myAdapter.binding.image.setImageResource(arrayList.get(position).getImage());
-        binding.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                viewHandle.ClickHandle(isChecked, position);
-            }
-        });
+        myAdapter.binding.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            boolean isChick = myAdapter.binding.checkBox.isChecked();
 
+        });
 
     }
 
@@ -67,6 +66,6 @@ public class AdapterNotices extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public interface ViewHandle {
-        void ClickHandle(boolean isCheck, int pos);
+        void ClickHandle(boolean isChick, int pos);
     }
 }

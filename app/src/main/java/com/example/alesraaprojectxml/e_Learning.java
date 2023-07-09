@@ -51,7 +51,7 @@ public class e_Learning extends AppCompatActivity {
         binding.iconModel.setOnClickListener(v -> {
             Intent c = new Intent();
             c.setAction(Intent.ACTION_VIEW);
-            c.setData(Uri.parse("https://ar.israa.edu.ps"));
+            c.setData(Uri.parse("https://student.israa.edu.ps"));
             startActivity(c);
         });
         binding.iconHomework.setOnClickListener(v -> {

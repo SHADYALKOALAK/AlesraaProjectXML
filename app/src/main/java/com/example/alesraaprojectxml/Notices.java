@@ -1,5 +1,6 @@
 package com.example.alesraaprojectxml;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -16,73 +17,71 @@ import com.example.alesraaprojectxml.databinding.ActivityNoticesBinding;
 import java.util.ArrayList;
 
 public class Notices extends AppCompatActivity implements AdapterNotices.ViewHandle {
-    ArrayList<ItemRecyclerNoticesScreen>arrayList;
-    Context context=Notices.this;
-    ArrayList<ItemRecyclerNoticesScreen>arrayList_2;
+    ArrayList<ItemRecyclerNoticesScreen> arrayList;
+    Context context = Notices.this;
+    ArrayList<ItemRecyclerNoticesScreen> arrayList_2;
     AdapterNotices.ViewHandle viewHandle;
 
 
-
-
-
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityNoticesBinding binding;
-        binding=ActivityNoticesBinding.inflate(getLayoutInflater());
+        binding = ActivityNoticesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        arrayList=new ArrayList<>();
-        arrayList_2=new ArrayList<>();
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
-        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم","تم إضافة واجب جديد"
-                ,R.drawable.logo_2,"قبل 3 ساعات"));
+        arrayList = new ArrayList<>();
+        arrayList_2 = new ArrayList<>();
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
+        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
+                , R.drawable.logo_2, "قبل 3 ساعات"));
 
-        AdapterNotices adapterNotices=new AdapterNotices(context,arrayList,viewHandle);
+        AdapterNotices adapterNotices = new AdapterNotices(context, arrayList, viewHandle);
         binding.recycler.setAdapter(adapterNotices);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         binding.recycler.setLayoutManager(linearLayoutManager);
         binding.recycler2.setAdapter(adapterNotices);
-        LinearLayoutManager linearLayoutManager_2=new LinearLayoutManager(context);
+        LinearLayoutManager linearLayoutManager_2 = new LinearLayoutManager(context);
         binding.recycler2.setLayoutManager(linearLayoutManager_2);
         binding.iconArrow.setOnClickListener(v -> {
-           finish();
+            finish();
         });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, HomeWorkScreen.class));
@@ -99,23 +98,27 @@ public class Notices extends AppCompatActivity implements AdapterNotices.ViewHan
         binding.iconOnlineLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,HomePageScreen.class));
+                startActivity(new Intent(context, HomePageScreen.class));
             }
         });
+        binding.tvClearAll.setOnClickListener(v -> {
+            try {
+                arrayList.clear();
+                adapterNotices.notifyDataSetChanged();
+                binding.text.setVisibility(View.GONE);
+            } catch (Exception exception) {
+                System.out.println(exception.getMessage());
+            }
 
-
-
+        });
+        binding.text.setVisibility(View.VISIBLE);
     }
 
 
     @Override
-    public void ClickHandle(boolean isCheck, int pos) {
-        if (isCheck){
-            arrayList_2.remove(pos);
-            arrayList.remove(pos);
-
-        }
-
+    public void ClickHandle(boolean isChick,int pos) {
+        Toast.makeText(context, pos+"", Toast.LENGTH_SHORT).show();
+        arrayList.remove(pos);
     }
 
 }
