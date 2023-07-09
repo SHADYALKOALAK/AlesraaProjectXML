@@ -40,6 +40,6 @@ public class Admin_1 extends AppCompatActivity {
         binding.iconMassage.setOnClickListener(v -> {
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
         });
-
+//
     }
 }

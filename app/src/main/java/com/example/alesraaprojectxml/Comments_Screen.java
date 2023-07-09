@@ -37,7 +37,7 @@ public class Comments_Screen extends AppCompatActivity {
         binding.rv.setLayoutManager(linearLayoutManager);
 
 
-
+//
         binding.iconComment.setOnClickListener(v -> {
             startActivity(new Intent(context, CommentsAdmin.class));
         });

@@ -18,6 +18,7 @@ public class AdapterMassageStudentWithAdmin extends RecyclerView.Adapter<Recycle
     public AdapterMassageStudentWithAdmin(ArrayList<ItemMassageStudentWithAdmin> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
+        //
     }
 
     @NonNull

@@ -20,6 +20,7 @@ public class AdapterCommentsAdmin extends RecyclerView.Adapter<RecyclerView.View
     public AdapterCommentsAdmin(Context context, ArrayList<ItemCommentsAdmin> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
+        //
     }
 
     @NonNull

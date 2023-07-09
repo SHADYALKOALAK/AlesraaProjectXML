@@ -21,6 +21,7 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
     public AdapterHomeWorkExport(Context context, ArrayList<ItemRvHomeWorkExport> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
+        //
     }
 
     @NonNull
