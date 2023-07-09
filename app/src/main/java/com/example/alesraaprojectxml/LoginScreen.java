@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -17,31 +18,40 @@ public class LoginScreen extends AppCompatActivity {
     private ActivityLoginScreenBinding binding;
     private Context context = LoginScreen.this;
     private DBase dBase;
+    String number = binding.editNumberOfUneversity.getText().toString().trim();
+    String password = binding.editPassword.getText().toString().trim();
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         dBase = new DBase(context);
         // loginToHomePage
         binding.btnLogin.setOnClickListener(v -> {
-            String number = binding.editNumberOfUneversity.getText().toString().trim();
-            String password = binding.editPassword.getText().toString().trim();
+
             if (number.isEmpty()) {
                 binding.editNumberOfUneversity.setError("من فضلك أدخل رقم الجامعي");
             } else if (password.isEmpty()) {
                 binding.editPassword.setError("من فضلك أدخل كلمة المرور");
             } else {
-                if (chickLogin(number, password)){
+                if (chickLogin(number, password)) {
                     finish();
-                }else {
+                } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setTitle("تحذير").setMessage("حدث خطأ أثناء المطابقة");
+                    builder.setTitle("خطأ في التسجيل ").setMessage("عذراً هذا الحساب غير متوفر! *الرجاء تسجيل حساب جديد*");
                     builder.show();
                 }
             }
         });
+
+
+
+
+
+
     }
 
     @SuppressLint("Range")

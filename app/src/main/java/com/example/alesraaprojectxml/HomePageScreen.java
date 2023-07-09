@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -16,13 +17,15 @@ import com.example.alesraaprojectxml.databinding.ActivityHomePageScreenBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePageScreen extends AppCompatActivity {
+public class HomePageScreen extends AppCompatActivity implements Rc_courses.Handle {
     private ActivityHomePageScreenBinding binding;
     private Context context = HomePageScreen.this;
     private List<CoursesModel> coursesModels;
     private Rc_courses rc_courses;
     private List<LectureModel> lectureModels;
     private RcLecture rcLecture;
+    Rc_courses.Handle handle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class HomePageScreen extends AppCompatActivity {
         coursesModels = new ArrayList<>();
         lectureModels = new ArrayList<>();
         rcLecture = new RcLecture(context, lectureModels);
-        rc_courses = new Rc_courses(context, coursesModels);
+        rc_courses = new Rc_courses(context, coursesModels,handle);
         coursesModels.add(new CoursesModel(R.drawable.img_3, "تصميم تجربة المستخدم", "BMOB4313-s231"));
         coursesModels.add(new CoursesModel(R.drawable.img_3, "هندسة البرمجيات", "BMOB4313-s231"));
         coursesModels.add(new CoursesModel(R.drawable.img_3, "التجارة النقالة", "BMOB4313-s231"));
@@ -73,6 +76,14 @@ public class HomePageScreen extends AppCompatActivity {
             Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
         });
 
+
+
+    }
+
+
+    @Override
+    public void clickHandle(int position, String nameCourse, String idCourse) {
+        startActivity(new Intent(getBaseContext(),e_Learning.class));
 
 
     }

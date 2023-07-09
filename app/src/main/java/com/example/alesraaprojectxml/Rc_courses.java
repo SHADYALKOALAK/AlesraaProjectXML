@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.alesraaprojectxml.databinding.RcCustomCoursesBinding;
+import com.google.android.material.transition.Hold;
 
 
 import java.util.List;
@@ -17,10 +18,15 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private List<CoursesModel> coursesModels;
     private RcCustomCoursesBinding binding;
+    Handle click;
 
-    public Rc_courses(Context context, List<CoursesModel> coursesModels) {
+
+
+
+    public Rc_courses(Context context, List<CoursesModel> coursesModels, Handle click) {
         this.context = context;
         this.coursesModels = coursesModels;
+        this.click=click;
     }
 
     @NonNull
@@ -36,6 +42,15 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         myViewHolder.binding.iconCourses.setImageResource(coursesModels.get(position).getImage());
         myViewHolder.binding.tvNameCourses.setText(coursesModels.get(position).getNameCourses());
         myViewHolder.binding.tvIdCourses.setText(coursesModels.get(position).getIdCourses());
+        myViewHolder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                click.clickHandle(position,myViewHolder.binding.tvNameCourses.getText().toString(),
+                        myViewHolder.binding.tvIdCourses.getText().toString());
+
+
+            }
+        });
 
 
     }
@@ -52,5 +67,11 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(binding.getRoot());
             this.binding = binding;
         }
+
+    }
+    public  interface Handle{
+        public void clickHandle(int position ,String nameCourse,String idCourse);
+
+
     }
 }

@@ -15,11 +15,12 @@ import com.example.alesraaprojectxml.databinding.ActivityRegisteredCoursesBindin
 import java.util.ArrayList;
 import java.util.List;
 
-public class RegisteredCourses extends AppCompatActivity {
+public class RegisteredCourses extends AppCompatActivity implements Rc_courses.Handle {
     private ActivityRegisteredCoursesBinding binding;
     private Context context = RegisteredCourses.this;
     private Rc_courses rc_courses;
     private List<CoursesModel> coursesModels;
+    Rc_courses.Handle handle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,8 @@ public class RegisteredCourses extends AppCompatActivity {
         binding = ActivityRegisteredCoursesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         coursesModels = new ArrayList<>();
-        rc_courses = new Rc_courses(context, coursesModels);
-        rc_courses = new Rc_courses(context, coursesModels);
+        rc_courses = new Rc_courses(context, coursesModels,handle);
+        rc_courses = new Rc_courses(context, coursesModels,handle);
         coursesModels.add(new CoursesModel(R.drawable.img_3, "تصميم تجربة المستخدم", "BMOB4313-s231"));
         coursesModels.add(new CoursesModel(R.drawable.img_3, "هندسة البرمجيات", "BMOB4313-s231"));
         coursesModels.add(new CoursesModel(R.drawable.img_3, "التجارة النقالة", "BMOB4313-s231"));
@@ -51,4 +52,10 @@ public class RegisteredCourses extends AppCompatActivity {
         });
     }
 
+
+    @Override
+    public void clickHandle(int position, String nameCourse, String idCourse) {
+        startActivity(new Intent(getBaseContext(),e_Learning.class));
+
+    }
 }
