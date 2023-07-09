@@ -1,6 +1,8 @@
 package com.example.alesraaprojectxml;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,12 +23,10 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Handle click;
 
 
-
-
     public Rc_courses(Context context, List<CoursesModel> coursesModels, Handle click) {
         this.context = context;
         this.coursesModels = coursesModels;
-        this.click=click;
+        this.click = click;
     }
 
     @NonNull
@@ -37,7 +37,7 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         MyViewHolder myViewHolder = (MyViewHolder) holder;
         myViewHolder.binding.iconCourses.setImageResource(coursesModels.get(position).getImage());
         myViewHolder.binding.tvNameCourses.setText(coursesModels.get(position).getNameCourses());
@@ -45,9 +45,10 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         myViewHolder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                click.clickHandle(position,myViewHolder.binding.tvNameCourses.getText().toString(),
-                        myViewHolder.binding.tvIdCourses.getText().toString());
-
+                Intent intent = new Intent(context, e_Learning.class);
+                intent.putExtra("name",coursesModels.get(position).getNameCourses());
+                intent.putExtra("name",coursesModels.get(position).getIdCourses());
+                context.startActivity(intent);
 
             }
         });
@@ -69,8 +70,9 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
     }
-    public  interface Handle{
-        public void clickHandle(int position ,String nameCourse,String idCourse);
+
+    public interface Handle {
+        public void clickHandle(int position, String nameCourse, String idCourse);
 
 
     }
