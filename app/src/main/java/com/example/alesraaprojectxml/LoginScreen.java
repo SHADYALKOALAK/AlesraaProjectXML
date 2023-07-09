@@ -27,11 +27,13 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        sharedPreferences = getSharedPreferences("login_save", MODE_PRIVATE);
-        boolean isTrue = sharedPreferences.getBoolean("x", false);
+        binding.checkbox.setChecked(false);
+        sharedPreferences=getSharedPreferences("login_save",MODE_PRIVATE);
+        boolean isTrue=sharedPreferences.getBoolean("x",false);
         if (isTrue) {
-            startActivity(new Intent(context, HomePageScreen.class));
+            startActivity(new Intent(context,HomePageScreen.class));
         }
+
 
 
         dBase = new DBase(context);
@@ -57,14 +59,26 @@ public class LoginScreen extends AppCompatActivity {
         binding.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                sharedPreferences = getSharedPreferences("login_save", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("x", isChecked);
+                sharedPreferences=getSharedPreferences("login_save",MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putBoolean("x",isChecked);
                 editor.apply();
+
+
 
 
             }
         });
+        binding.tvSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,SignUpScreen.class));
+            }
+        });
+
+
+
+
 
 
     }
