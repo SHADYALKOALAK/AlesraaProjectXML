@@ -17,7 +17,7 @@ public class ViedoScreen extends AppCompatActivity {
     private Context context = ViedoScreen.this;
     private List<CommentsModel> commentsModels;
     private Rc_Comment rc_comment;
-    private DataBase dataBase;
+    private DBase dataBase;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class ViedoScreen extends AppCompatActivity {
         binding = ActivityViedoScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         commentsModels = new ArrayList<>();
-        dataBase = new DataBase(context);
+        dataBase = new DBase(context);
         rc_comment = new Rc_Comment(context, commentsModels);
 
         commentsModels.add(new CommentsModel(" هدية خليل مقاط /", "يعطيك ألف عافية دكتور"));

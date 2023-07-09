@@ -6,9 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
 
-public class DataBase extends SQLiteOpenHelper {
+public class DBase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "E_learning_DataBse";
     private static final String Table_NAME = "user_data";
     private static final String COL_ID = "idComment";
@@ -17,16 +16,17 @@ public class DataBase extends SQLiteOpenHelper {
     private static final String COL_PASSWORD = "user_password";
     private static final int DB_VERSION = 3;
     public static final String TN_COMMENT = "comment";
-    public static final String COL_COMMENT = "comment";
+    public static final String COL_COMMENT = "massage";
 
-    public DataBase(Context context) {
+    public DBase(Context context) {
         super(context, DATABASE_NAME, null, DB_VERSION);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment Primary key AUTOINCREMENT,comment TEXT)");
+        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment Primary key AUTOINCREMENT,massage TEXT)");
+
     }
 
     @Override
