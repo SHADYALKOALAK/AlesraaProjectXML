@@ -27,6 +27,7 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.checkbox.setChecked(false);
         sharedPreferences=getSharedPreferences("login_save",MODE_PRIVATE);
         boolean isTrue=sharedPreferences.getBoolean("x",false);
         if (isTrue) {
@@ -65,6 +66,13 @@ public class LoginScreen extends AppCompatActivity {
 
 
 
+
+            }
+        });
+        binding.tvSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,SignUpScreen.class));
             }
         });
 

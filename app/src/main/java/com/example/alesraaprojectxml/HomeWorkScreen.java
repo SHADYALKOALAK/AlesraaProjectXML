@@ -84,21 +84,24 @@ public class HomeWorkScreen extends AppCompatActivity {
             }
 
         });
+        filePickerLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(),
+                uri -> {
+                    if (uri != null) {
+
+                        // Handle the selected file here
+                        String filePath = uri.getPath();
+                        // Upload the file to your application or perform further operations
+                        Toast.makeText(context, "Selected file: " + filePath, Toast.LENGTH_SHORT).show();
+                        binding.iconFile.setVisibility(View.VISIBLE);
+                    }
+                });
         binding.chooseFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filePickerLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(),
-                        uri -> {
-                            if (uri != null) {
-                                // Handle the selected file here
-                                String filePath = uri.getPath();
-                                // Upload the file to your application or perform further operations
-                                Toast.makeText(context, "Selected file: " + filePath, Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
                 // Launch file picker when a button or any UI element is clicked
                 openFilePicker();
+
+
             }
         });
 
