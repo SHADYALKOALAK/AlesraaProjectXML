@@ -40,10 +40,12 @@ public class ViedoScreen extends AppCompatActivity {
                 binding.edComments.setError("أضف تعليق من فضلك ");
             } else {
                 commentsModels.add(new CommentsModel(comment));
+                //
                 binding.edComments.setText("");
                 dataBase.insertComment(new CommentsModel(comment));
                 rc_comment.notifyDataSetChanged();
             }
+
         });
     }
 }

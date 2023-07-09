@@ -10,9 +10,9 @@ import com.example.alesraaprojectxml.databinding.ActivityMassagesStudentWethAdmi
 
 import java.util.ArrayList;
 
-public class massagesStudentWethAdmin extends AppCompatActivity {
+public class MassagesStudentWethAdmin extends AppCompatActivity {
     ArrayList<ItemMassageStudentWithAdmin> arrayList;
-    Context context=massagesStudentWethAdmin.this;
+    Context context= MassagesStudentWethAdmin.this;
     AdapterMassageStudentWithAdmin adapterMassageStudentWithAdmin;
 
     @Override

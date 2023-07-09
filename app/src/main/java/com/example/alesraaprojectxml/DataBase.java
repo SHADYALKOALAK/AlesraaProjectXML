@@ -26,7 +26,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment Primary key AUTOINCREMENT,comment TEXT)");
+
     }
 
     @Override
@@ -35,10 +35,10 @@ public class DataBase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertComment(CommentsModel model) {
+    public boolean insertComment(CommentsModel comment) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("comment", model.getComment());
+        values.put(COL_COMMENT, comment.getComment());
         long re = database.insert(TN_COMMENT, null, values);
         return re != -1;
     }
