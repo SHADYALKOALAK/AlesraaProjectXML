@@ -15,7 +15,7 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME = "user_name";
     public static final String COL_NUMBER = "numberUser";
     public static final String COL_PASSWORD = "user_password";
-    public static final int DB_VERSION = 9;
+    public static final int DB_VERSION = 11;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
     public static final String TN_MASSAGE = "massageToAdmin";
@@ -33,7 +33,7 @@ public class DBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment INTEGER Primary key AUTOINCREMENT,massage TEXT)");
+        db.execSQL("CREATE TABLE " + TN_COMMENT + "(idComment INTEGER Primary key AUTOINCREMENT,massage TEXT,name TEXT)");
         db.execSQL("CREATE TABLE " + Table_NAMEUSRT + " ( " + COL_ID_USER + " INTEGER Primary key AUTOINCREMENT , "
                 + COL_NAME + " TEXT , "
                 + COL_NUMBER + " TEXT , "
@@ -58,6 +58,7 @@ public class DBase extends SQLiteOpenHelper {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("massage", model.getComment());
+        values.put("name", model.getName());
         long re = database.insert(TN_COMMENT, null, values);
         return re != -1;
         //

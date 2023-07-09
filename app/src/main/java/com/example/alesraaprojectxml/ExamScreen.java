@@ -20,7 +20,9 @@ public class ExamScreen extends AppCompatActivity {
     private List<CommentsModel> commentsModels;
     private Rc_Comment rc_comment;
     private DBase dBase;
+    private String name;
 
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,23 +35,26 @@ public class ExamScreen extends AppCompatActivity {
         Cursor cursor = dBase.getComment();
         while (cursor.moveToNext()) {
             @SuppressLint("Range") String comment = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
-            commentsModels.add(new CommentsModel(comment));
+            @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
+            commentsModels.add(new CommentsModel(nameProfile, comment));
         }
-//        commentsModels.add(new CommentsModel(" هدية خليل مقاط /", "يعطيك ألف عافية دكتور"));
-//        commentsModels.add(new CommentsModel("دانية محمود نصر/", "يعطيك ألف عافية دكتور , تم تسليم الواجب"));
-//        commentsModels.add(new CommentsModel("دانية محمود نصر/", "يعطيك ألف عافية دكتور , تم تسليم الواجب"));
-//        binding.rcComments.setAdapter(rc_comment);
-//        binding.rcComments.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+
+        binding.rcComments.setAdapter(rc_comment);
+        binding.rcComments.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
         //update from project
+        Cursor user = dBase.getUser();
+        while (user.moveToNext()) {
+            name = user.getString(user.getColumnIndex(DBase.COL_NAME));
+        }
 
         binding.btnSend.setOnClickListener(v -> {
             String comment = binding.edComments.getText().toString().trim();
             if (comment.isEmpty()) {
                 binding.edComments.setError("أضف تعليق من فضلك ");
             } else {
-                commentsModels.add(new CommentsModel(comment));
+                commentsModels.add(new CommentsModel(name, comment));
+                dBase.insertComment(new CommentsModel(name, comment));
                 binding.edComments.setText("");
-                dBase.insertComment(new CommentsModel(comment));
                 rc_comment.notifyDataSetChanged();
             }
         });

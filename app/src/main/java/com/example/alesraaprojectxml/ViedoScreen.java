@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.alesraaprojectxml.databinding.ActivityViedoScreenBinding;
 
@@ -20,7 +21,10 @@ public class ViedoScreen extends AppCompatActivity {
     private List<CommentsModel> commentsModels;
     private Rc_Comment rc_comment;
     private DBase dataBase;
+    @SuppressLint("Range")
+    String name;
 
+    @SuppressLint({"Range", "NotifyDataSetChanged"})
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,16 +36,15 @@ public class ViedoScreen extends AppCompatActivity {
         Cursor cursor = dataBase.getComment();
         while (cursor.moveToNext()) {
             @SuppressLint("Range") String comment = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
-            commentsModels.add(new CommentsModel(comment));
+            @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
+            commentsModels.add(new CommentsModel(nameProfile,comment));
         }
-//        Cursor
-
-
-        //commentsModels.add(new CommentsModel(" هدية خليل مقاط /", "يعطيك ألف عافية دكتور"));
-        //commentsModels.add(new CommentsModel("دانية محمود نصر/", "يعطيك ألف عافية دكتور , تم تسليم الواجب"));
-        //commentsModels.add(new CommentsModel("دانية محمود نصر/", "يعطيك ألف عافية دكتور , تم تسليم الواجب"));
         binding.rcComments.setAdapter(rc_comment);
         binding.rcComments.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+        Cursor user = dataBase.getUser();
+        while (user.moveToNext()) {
+            name = user.getString(user.getColumnIndex(DBase.COL_NAME));
+        }
 
 
         binding.btnSend.setOnClickListener(v -> {
@@ -49,8 +52,9 @@ public class ViedoScreen extends AppCompatActivity {
             if (comment.isEmpty()) {
                 binding.edComments.setError("أضف تعليق من فضلك ");
             } else {
-                commentsModels.add(new CommentsModel(comment));
-                dataBase.insertComment(new CommentsModel(comment));
+                commentsModels.add(new CommentsModel(name, comment));
+                dataBase.insertComment(new CommentsModel(name, comment));
+                binding.edComments.setText("");
                 rc_comment.notifyDataSetChanged();
             }
         });
