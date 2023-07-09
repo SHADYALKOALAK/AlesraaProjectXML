@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CommentsAdmin">
+    tools:context=".massagesStudentWethAdmin">
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/image_profile"
         android:layout_width="50dp"
@@ -49,7 +49,7 @@
         android:background="#F5F5F5"
         android:gravity="center"
         android:paddingEnd="16dp"
-        android:text="@string/text12"
+        android:text="@string/text_12"
         android:textColor="#010101"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,5 +148,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
