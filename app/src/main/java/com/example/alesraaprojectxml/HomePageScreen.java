@@ -24,6 +24,7 @@ public class HomePageScreen extends AppCompatActivity {
     private List<LectureModel> lectureModels;
     private RcLecture rcLecture;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +74,7 @@ public class HomePageScreen extends AppCompatActivity {
             Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
         });
 
-
+        //
 
     }
 }

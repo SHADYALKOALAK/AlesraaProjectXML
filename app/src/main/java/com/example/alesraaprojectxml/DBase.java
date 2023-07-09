@@ -96,6 +96,7 @@ public class DBase extends SQLiteOpenHelper {
         values.put(COL_TITlE_MASSAGE, massage.getTitleMassage());
         long re = database.insert(TN_MASSAGE, null, values);
         return re != -1;
+        //
 
     }
 
@@ -103,6 +104,6 @@ public class DBase extends SQLiteOpenHelper {
         SQLiteDatabase dp = this.getReadableDatabase();
         Cursor cursor = dp.rawQuery("Select * From " + TN_MASSAGE, null);
         return cursor;
-
+        //
     }
 }
