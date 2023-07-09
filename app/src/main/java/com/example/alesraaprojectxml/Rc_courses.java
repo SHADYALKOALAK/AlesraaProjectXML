@@ -47,7 +47,7 @@ public class Rc_courses extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(context, e_Learning.class);
                 intent.putExtra("name",coursesModels.get(position).getNameCourses());
-                intent.putExtra("name",coursesModels.get(position).getIdCourses());
+                intent.putExtra("id",coursesModels.get(position).getIdCourses());
                 context.startActivity(intent);
 
             }
