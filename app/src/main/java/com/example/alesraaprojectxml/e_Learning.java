@@ -10,7 +10,7 @@ import com.example.alesraaprojectxml.databinding.ActivityElearningSBinding;
 import java.util.ArrayList;
 
 public class e_Learning extends AppCompatActivity implements Rc_courses.Handle {
-   TextView tv_nameCourse;
+    TextView tv_nameCourse;
     TextView tv_idCourse;
 
 
