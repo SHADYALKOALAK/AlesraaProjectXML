@@ -1,5 +1,3 @@
-
-
 package com.example.alesraaprojectxml;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -27,7 +25,7 @@ public class MainWelcomeScreens extends AppCompatActivity {
         skip = findViewById(R.id.tv_skip);
 
         skip.setOnClickListener(v -> {
-            Intent intent = new Intent(context, HomePageScreen.class);
+            Intent intent = new Intent(context, LoginScreen.class);
             startActivity(intent);
             finish();
         });
