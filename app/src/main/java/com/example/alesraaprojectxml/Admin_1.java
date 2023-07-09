@@ -31,5 +31,15 @@ public class Admin_1 extends AppCompatActivity {
             startActivity(new Intent(context, UploodScreen.class));
 
         });
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, Comments_Screen.class));
+        });
+        binding.iconComment.setOnClickListener(v -> {
+            startActivity(new Intent(context, CommentsAdmin.class));
+        });
+        binding.iconMassage.setOnClickListener(v -> {
+            startActivity(new Intent(context, MassagesStudentWethAdmin.class));
+        });
+
     }
 }

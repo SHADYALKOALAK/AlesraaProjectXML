@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -48,6 +49,12 @@ public class MassagesStudentWethAdmin extends AppCompatActivity {
         binding.rv.setAdapter(adapterMassageStudentWithAdmin);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         binding.rv.setLayoutManager(linearLayoutManager);
-        //
+
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, Comments_Screen.class));
+        });
+        binding.iconComment.setOnClickListener(v -> {
+            startActivity(new Intent(context, CommentsAdmin.class));
+        });
     }
 }

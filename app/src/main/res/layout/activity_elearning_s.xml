@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"
-        android:layout_height="83dp"
+        android:layout_height="wrap_content"
         android:background="#F5F5F5"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
@@ -69,7 +69,6 @@
             android:id="@+id/icon_education"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">

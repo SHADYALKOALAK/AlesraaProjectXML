@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.alesraaprojectxml.databinding.ActivityCommentsScreenBinding;
@@ -34,6 +35,15 @@ public class Comments_Screen extends AppCompatActivity {
         binding.rv.setAdapter(adapterHomeWorkExport);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
         binding.rv.setLayoutManager(linearLayoutManager);
+
+
+
+        binding.iconComment.setOnClickListener(v -> {
+            startActivity(new Intent(context, CommentsAdmin.class));
+        });
+        binding.iconMassage.setOnClickListener(v -> {
+            startActivity(new Intent(context, MassagesStudentWethAdmin.class));
+        });
 
 
 

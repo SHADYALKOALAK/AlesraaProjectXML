@@ -79,6 +79,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
         <LinearLayout
+            android:id="@+id/icon_homework"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -102,6 +103,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/icon_comment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -125,6 +127,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/icon_massage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
