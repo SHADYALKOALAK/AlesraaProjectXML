@@ -48,5 +48,6 @@ public class DBase extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         Cursor cursor = database.rawQuery(TN_COMMENT, null, null);
         return cursor;
+        //getUSER//
     }
 }
