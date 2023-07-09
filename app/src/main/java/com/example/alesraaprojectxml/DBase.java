@@ -22,9 +22,18 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_MASSAGE = "colMassage";
     public static final String COL_NAME_PERSONAL = "namePerson";
     public static final String COL_TITlE_MASSAGE = "titleMassage";
+    public static final String Table_NOTICS = "notification_data";
+    public static final String COL_NAME_COURSE = "name_Course";
+    public static final String COL_DESCRIPTION_COURSE = "description_course";
+    public static final String COL_ID_COURSE = "id_course";
 
 
-    //DATA
+
+
+
+
+
+
 
     public DBase(Context context) {
         super(context, DATABASE_NAME, null, DB_VERSION);
@@ -102,5 +111,12 @@ public class DBase extends SQLiteOpenHelper {
         Cursor cursor = dp.rawQuery("Select * From " + TN_MASSAGE, null);
         return cursor;
 
+    }
+
+    public boolean deleteProduct(ItemRecyclerNoticesScreen noticesScreen) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        String[] args = {noticesScreen.getId() + ""};
+        int re = database.delete(Table_NOTICS, "id_course = ?", args);
+        return re > 0;
     }
 }

@@ -6,6 +6,16 @@ public class ItemRecyclerNoticesScreen {
     int image;
     String date;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    int id;
+
     public ItemRecyclerNoticesScreen(String nameCourse, String description, int image, String date) {
         this.nameCourse = nameCourse;
         this.description = description;
