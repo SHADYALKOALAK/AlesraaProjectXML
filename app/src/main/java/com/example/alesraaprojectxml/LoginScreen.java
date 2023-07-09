@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.example.alesraaprojectxml.databinding.ActivityLoginScreenBinding;
@@ -18,8 +19,7 @@ public class LoginScreen extends AppCompatActivity {
     private ActivityLoginScreenBinding binding;
     private Context context = LoginScreen.this;
     private DBase dBase;
-    String number = binding.editNumberOfUneversity.getText().toString().trim();
-    String password = binding.editPassword.getText().toString().trim();
+
     SharedPreferences sharedPreferences;
 
     @Override
@@ -27,10 +27,19 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        sharedPreferences=getSharedPreferences("login_save",MODE_PRIVATE);
+        boolean isTrue=sharedPreferences.getBoolean("x",false);
+        if (isTrue) {
+            startActivity(new Intent(context,HomePageScreen.class));
+        }
+
+
 
         dBase = new DBase(context);
         // loginToHomePage
         binding.btnLogin.setOnClickListener(v -> {
+            String number = binding.editNumberOfUneversity.getText().toString().trim();
+            String password = binding.editPassword.getText().toString().trim();
 
             if (number.isEmpty()) {
                 binding.editNumberOfUneversity.setError("من فضلك أدخل رقم الجامعي");
@@ -44,6 +53,18 @@ public class LoginScreen extends AppCompatActivity {
                     builder.setTitle("خطأ في التسجيل ").setMessage("عذراً هذا الحساب غير متوفر! *الرجاء تسجيل حساب جديد*");
                     builder.show();
                 }
+            }
+        });
+        binding.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                sharedPreferences=getSharedPreferences("login_save",MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putBoolean("x",isChecked);
+                editor.apply();
+
+
+
             }
         });
 
