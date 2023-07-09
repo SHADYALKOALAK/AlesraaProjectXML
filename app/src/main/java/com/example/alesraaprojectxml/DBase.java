@@ -41,7 +41,6 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TN_MASSAGE + " ( " + COL_MASSAGE + " TEXT , "
                 + COL_NAME_PERSONAL + " TEXT , "
                 + COL_TITlE_MASSAGE + " TEXT)");
-
         //
     }
 
