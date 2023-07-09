@@ -21,7 +21,7 @@ public class UnSplashScreen extends AppCompatActivity {
         timerTask = new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(context, MainWelcomeScreens.class);
+                Intent intent = new Intent(context, SignUpScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 finish();

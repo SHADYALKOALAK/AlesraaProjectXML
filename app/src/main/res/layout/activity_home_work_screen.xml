@@ -145,7 +145,7 @@
         android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:gravity="end"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/divider">
@@ -206,7 +206,7 @@
         android:id="@+id/layout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="end"
         app:layout_constraintTop_toBottomOf="@id/tv_t"
         tools:layout_editor_absoluteX="-5dp">
