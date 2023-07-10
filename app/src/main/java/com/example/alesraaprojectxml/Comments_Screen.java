@@ -32,16 +32,8 @@ public class Comments_Screen extends AppCompatActivity implements AdapterHomeWor
         setContentView(binding.getRoot());
         arrayList = new ArrayList<>();
         dBase = new DBase(context);
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-        adapterHomeWorkExport = new AdapterHomeWorkExport(context, arrayList,viewHandle_inter);
+
+        adapterHomeWorkExport = new AdapterHomeWorkExport(context, arrayList, viewHandle_inter);
         binding.rv.setAdapter(adapterHomeWorkExport);
         binding.rv.setLayoutManager(new LinearLayoutManager(context));
         Cursor name = dBase.getComment();
@@ -64,18 +56,11 @@ public class Comments_Screen extends AppCompatActivity implements AdapterHomeWor
         });
 
 
-
     }
+
 
     @Override
     public void ClickHandle(int pos) {
-
-
-
-
-
-
-
 
     }
 }
