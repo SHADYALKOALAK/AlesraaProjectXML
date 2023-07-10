@@ -262,6 +262,7 @@
                 android:paddingEnd="10dp"
                 android:paddingTop="5dp">
                 <TextView
+                    android:id="@+id/ed_upLoadeFile"
                     android:paddingBottom="29dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -340,6 +341,7 @@
 
             </LinearLayout>
             <Button
+                android:id="@+id/btn_upLoade"
                 android:layout_width="115dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
