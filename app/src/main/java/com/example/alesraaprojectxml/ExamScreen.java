@@ -52,6 +52,17 @@ public class ExamScreen extends AppCompatActivity {
             name = user.getString(user.getColumnIndex(DBase.COL_NAME));
         }
 
+        Cursor exam = dBase.getExam();
+        while (exam.moveToNext()){
+            String location =exam.getString(exam.getColumnIndex(exam.getColumnName(1)));
+            String dis =exam.getString(exam.getColumnIndex(exam.getColumnName(2)));
+            String path =exam.getString(exam.getColumnIndex(exam.getColumnName(3)));
+            binding.tvExam.setText(location);
+            binding.tvDis.setText(dis);
+            binding.tvPath.setText(path);
+        }
+
+
         binding.btnSend.setOnClickListener(v -> {
             String comment = binding.edComments.getText().toString().trim();
             if (comment.isEmpty()) {

@@ -152,9 +152,11 @@
 
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
             android:text="اخر موعد للتسليم 1/12/2022 الساعة 11:59"
             android:textColor="@color/black"
             android:textSize="12sp" />
@@ -174,6 +176,7 @@
         android:text="الطلبة الأعزاء يرجى حل الواجب المرفق"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="@id/layout1"
         app:layout_constraintTop_toBottomOf="@id/layout1" />
 
@@ -182,7 +185,7 @@
         android:id="@+id/icon_file"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:visibility="invisible"
         android:src="@drawable/file_icon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -190,17 +193,20 @@
         app:layout_constraintTop_toBottomOf="@id/tv_text" />
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/tv_t"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10sp"-->
-<!--        android:text="معاينة الملف المرفق"-->
-<!--        android:textColor="@color/grey"-->
-<!--        android:textSize="15sp"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/icon_file"-->
-<!--        app:layout_constraintStart_toStartOf="@id/icon_file"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/icon_file" />-->
+    <TextView
+        android:id="@+id/tv_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:text="معاينة الملف المرفق"
+        android:textColor="@color/grey"
+        android:textSize="10sp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/layout4"
+        app:layout_constraintEnd_toEndOf="@id/icon_file"
+        app:layout_constraintStart_toStartOf="@id/icon_file"
+        app:layout_constraintTop_toBottomOf="@id/icon_file" />
 
 
     <LinearLayout
@@ -217,7 +223,7 @@
             android:id="@+id/choose_File"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10sp"
             android:background="@drawable/btn_shape"
             android:text="اختيار الملف "
@@ -227,7 +233,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="رفع الملف"
             android:textColor="@color/black"

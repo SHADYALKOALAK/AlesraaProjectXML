@@ -23,11 +23,9 @@ public class AdapterNotices extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private ViewHandle viewHandle;
 
 
-    public AdapterNotices(Context context, ArrayList<ItemRecyclerNoticesScreen> arrayList, ViewHandle viewHandle) {
+    public AdapterNotices(Context context, ArrayList<ItemRecyclerNoticesScreen> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
-
-        this.viewHandle = viewHandle;
     }
 
 

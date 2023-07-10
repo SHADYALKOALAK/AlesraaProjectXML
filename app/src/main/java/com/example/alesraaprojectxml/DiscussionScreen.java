@@ -61,6 +61,17 @@ public class DiscussionScreen extends AppCompatActivity {
                 rc_comment.notifyDataSetChanged();
             }
         });
+
+
+        Cursor massage = dBase.getAdminDis();
+        while (massage.moveToNext()){
+            String location =massage.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
+            String dis =massage.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
+            binding.tvDis.setText(location);
+            binding.tvMassage.setText(dis);
+        }
+
+
         binding.imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,8 +108,8 @@ public class DiscussionScreen extends AppCompatActivity {
                 finish();
             }
         });
-    }
 
+    }
 
 
 }

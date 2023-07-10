@@ -51,6 +51,18 @@ public class HomeWorkScreen extends AppCompatActivity {
             binding.tvName.setText(nameProfile);
         }
 
+
+        Cursor file = dataBase.getAdminFile();
+        while (file.moveToNext()) {
+            String location = file.getString(file.getColumnIndex(file.getColumnName(1)));
+            String dis = file.getString(file.getColumnIndex(file.getColumnName(2)));
+            String path = file.getString(file.getColumnIndex(file.getColumnName(3)));
+            binding.tvTitle.setText(location);
+            binding.tvText.setText(dis);
+            binding.tvPath.setText(path);
+            binding.iconFile.setVisibility(View.VISIBLE);
+        }
+
         binding.rcComments.setAdapter(rc_comment);
         binding.rcComments.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
 

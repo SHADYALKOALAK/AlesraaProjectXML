@@ -3,8 +3,10 @@ package com.example.alesraaprojectxml;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import com.example.alesraaprojectxml.databinding.ActivityCommentsScreenBinding;
@@ -12,29 +14,43 @@ import com.example.alesraaprojectxml.databinding.ActivityCommentsScreenBinding;
 import java.util.ArrayList;
 
 public class Comments_Screen extends AppCompatActivity {
-    ArrayList<ItemRvHomeWorkExport> arrayList;
-    Context context=Comments_Screen.this;
-    AdapterHomeWorkExport adapterHomeWorkExport;
+    private ArrayList<ItemRvHomeWorkExport> arrayList;
+    private Context context = Comments_Screen.this;
+    private AdapterHomeWorkExport adapterHomeWorkExport;
+    private DBase dBase;
+    private String nameProfile;
+
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCommentsScreenBinding binding;
-        binding=ActivityCommentsScreenBinding.inflate(getLayoutInflater());
+        binding = ActivityCommentsScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        arrayList=new ArrayList<>();
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad","java"));
-        adapterHomeWorkExport=new AdapterHomeWorkExport(context,arrayList);
+        arrayList = new ArrayList<>();
+        dBase = new DBase(context);
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+//        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
+        adapterHomeWorkExport = new AdapterHomeWorkExport(context, arrayList);
         binding.rv.setAdapter(adapterHomeWorkExport);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
-        binding.rv.setLayoutManager(linearLayoutManager);
+        binding.rv.setLayoutManager(new LinearLayoutManager(context));
+        Cursor name = dBase.getComment();
+        while (name.moveToNext()) {
+            nameProfile = name.getString(name.getColumnIndex(name.getColumnName(2)));
+        }
+
+        Cursor filePath = dBase.getPathFile();
+        while (filePath.moveToNext()) {
+            @SuppressLint("Range") String path = filePath.getString(filePath.getColumnIndex(filePath.getColumnName(1)));
+            arrayList.add(new ItemRvHomeWorkExport(nameProfile, path));
+        }
 
 
 //
@@ -44,9 +60,6 @@ public class Comments_Screen extends AppCompatActivity {
         binding.iconMassage.setOnClickListener(v -> {
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
         });
-
-
-
 
 
     }

@@ -36,6 +36,15 @@ public class FileScreen extends AppCompatActivity {
         commentsModels = new ArrayList<>();
         dataBase = new DBase(context);
         rc_comment = new Rc_Comment(context, commentsModels);
+        Cursor file = dataBase.getAdminFile();
+        while (file.moveToNext()) {
+            String location = file.getString(file.getColumnIndex(file.getColumnName(1)));
+            String dis = file.getString(file.getColumnIndex(file.getColumnName(2)));
+            String path = file.getString(file.getColumnIndex(file.getColumnName(3)));
+            binding.tvText.setText(location);
+            binding.tvDis.setText(dis);
+            binding.tvPath.setText(path);
+        }
         Cursor cursor = dataBase.getComment();
         while (cursor.moveToNext()) {
             @SuppressLint("Range") String comment = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
@@ -50,6 +59,8 @@ public class FileScreen extends AppCompatActivity {
         while (user.moveToNext()) {
             name = user.getString(user.getColumnIndex(DBase.COL_NAME));
         }
+
+
         binding.btnSend.setOnClickListener(v -> {
             String comment = binding.edComments.getText().toString().trim();
             if (comment.isEmpty()) {
@@ -94,7 +105,7 @@ public class FileScreen extends AppCompatActivity {
         binding.iconFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,SearchCourse.class));
+                startActivity(new Intent(context, SearchCourse.class));
             }
         });
         binding.iconArrow.setOnClickListener(new View.OnClickListener() {
