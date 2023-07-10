@@ -69,8 +69,10 @@ public class MassageTheAdmin extends AppCompatActivity {
 
         });
         binding.imageProfile.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
-        });
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);        });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, HomeWorkScreen.class));
         });
@@ -86,8 +88,10 @@ public class MassageTheAdmin extends AppCompatActivity {
             binding.tvName.setText(nameProfile);
         }
         binding.iconProfileScreen.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
-        });
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);        });
         binding.iconEducation.setOnClickListener(v -> {
             startActivity(new Intent(context, HomePageScreen.class));
         });

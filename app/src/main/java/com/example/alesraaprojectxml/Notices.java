@@ -64,8 +64,12 @@ public class Notices extends AppCompatActivity implements AdapterNotices.ViewHan
             startActivity(intent);
         });
         binding.iconHomePage.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);
         });
+
         binding.iconOnlineLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +88,7 @@ public class Notices extends AppCompatActivity implements AdapterNotices.ViewHan
         });
         binding.text.setVisibility(View.VISIBLE);
     }
+
 
 
     @Override

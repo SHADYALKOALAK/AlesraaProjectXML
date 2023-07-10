@@ -48,7 +48,10 @@ public class e_Learning extends AppCompatActivity {
         binding.imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+                Intent c = new Intent();
+                c.setAction(Intent.ACTION_VIEW);
+                c.setData(Uri.parse("https://student.israa.edu.ps/"));
+                startActivity(c);
             }
         });
         binding.icNot.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +70,10 @@ public class e_Learning extends AppCompatActivity {
             startActivity(new Intent(context, HomeWorkDescription.class));
         });
         binding.iconProfileScreen.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);
         });
         binding.iconEducation.setOnClickListener(new View.OnClickListener() {
             @Override
