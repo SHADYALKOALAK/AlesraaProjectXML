@@ -63,7 +63,7 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
                 } else if (mark1 > 10) {
                     dailogMarks.editMarks.setError("يجب عليك إدخال العلامة من 10 ");
                 } else {
-                    if (dBase.insertMarkAdmin(mark, arrayList.get(position).nameCourse)) {
+                    if (dBase.insertMarkAdmin(mark, arrayList.get(position).getNameCourse())) {
                         Toast.makeText(context, " تم إرسال العلامة", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
