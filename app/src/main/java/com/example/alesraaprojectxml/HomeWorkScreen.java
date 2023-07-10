@@ -27,8 +27,8 @@ public class HomeWorkScreen extends AppCompatActivity {
     private List<CommentsModel> commentsModels;
     private Rc_Comment rc_comment;
     private DBase dataBase;
+    private String filePath;
     private String name;
-
     private ActivityResultLauncher<String> filePickerLauncher;
 
 
@@ -75,6 +75,12 @@ public class HomeWorkScreen extends AppCompatActivity {
             intent.setData(Uri.parse("https://student.israa.edu.ps"));
             startActivity(intent);
         });
+        binding.btnSend.setOnClickListener(v -> {
+
+            if (dataBase.insertPathFile(filePath)) {
+                Toast.makeText(context, "من حفظ الملف", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         Cursor user = dataBase.getUser();
         while (user.moveToNext()) {
@@ -97,7 +103,7 @@ public class HomeWorkScreen extends AppCompatActivity {
                     if (uri != null) {
 
                         // Handle the selected file here
-                        String filePath = uri.getPath();
+                        filePath = uri.getPath();
                         // Upload the file to your application or perform further operations
                         Toast.makeText(context, "Selected file: " + filePath, Toast.LENGTH_SHORT).show();
                         binding.iconFile.setVisibility(View.VISIBLE);
