@@ -15,7 +15,7 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME = "user_name";
     public static final String COL_NUMBER = "numberUser";
     public static final String COL_PASSWORD = "user_password";
-    public static final int DB_VERSION = 13;
+    public static final int DB_VERSION = 17;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
     public static final String TN_MASSAGE = "massageToAdmin";
@@ -42,7 +42,9 @@ public class DBase extends SQLiteOpenHelper {
                 + COL_NAME_PERSONAL + " TEXT , "
                 + COL_TITlE_MASSAGE + " TEXT)");
         db.execSQL("CREATE TABLE FilePath (id INTEGER Primary key AUTOINCREMENT,path TEXT)");
-        db.execSQL("CREATE TABLE UpLoadeAdmin (id INTEGER Primary key AUTOINCREMENT,location TEXT,dis TEXT ,path TEXT)");
+        db.execSQL("CREATE TABLE UpLoadeAdmin (id INTEGER Primary key AUTOINCREMENT,locationAdmin TEXT,disAdmin TEXT ,pathAdmin TEXT)");
+        db.execSQL("CREATE TABLE UpLoadeToDis (id INTEGER Primary key AUTOINCREMENT,locationDis TEXT,disDis TEXT)");
+        db.execSQL("CREATE TABLE UpLoadeExam (id INTEGER Primary key AUTOINCREMENT,location TEXT,dis TEXT ,path TEXT)");
         //
     }
 
@@ -53,6 +55,8 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TN_MASSAGE);
         db.execSQL("DROP TABLE IF EXISTS FilePath");
         db.execSQL("DROP TABLE IF EXISTS UpLoadeAdmin");
+        db.execSQL("DROP TABLE IF EXISTS UpLoadeToDis");
+        db.execSQL("DROP TABLE IF EXISTS UpLoadeExam");
         onCreate(db);
 
     }
@@ -126,9 +130,9 @@ public class DBase extends SQLiteOpenHelper {
     public boolean insertAdminFile(UpLoadeAdminModel model) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("location", model.getLocation());
-        values.put("dis", model.getDis());
-        values.put("path", model.getPath());
+        values.put("locationAdmin", model.getLocation());
+        values.put("disAdmin", model.getDis());
+        values.put("pathAdmin", model.getPath());
         long re = database.insert("UpLoadeAdmin", null, values);
         return re != -1;
 
@@ -137,6 +141,41 @@ public class DBase extends SQLiteOpenHelper {
     public Cursor getAdminFile() {
         SQLiteDatabase dp = this.getReadableDatabase();
         Cursor cursor = dp.rawQuery("Select * From UpLoadeAdmin", null);
+        return cursor;
+
+    }
+
+    public boolean insertAdminDis(UpLoadeAdminModel model) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("locationDis", model.getLocation());
+        values.put("disDis", model.getDis());
+        long re = database.insert("UpLoadeToDis", null, values);
+        return re != -1;
+
+    }
+
+    public Cursor getAdminDis() {
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor = dp.rawQuery("Select * From UpLoadeToDis", null);
+        return cursor;
+
+    }
+
+    public boolean insertExam(UpLoadeAdminModel model) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("location", model.getLocation());
+        values.put("dis", model.getDis());
+        values.put("path", model.getPath());
+        long re = database.insert("UpLoadeExam", null, values);
+        return re != -1;
+
+    }
+
+    public Cursor getExam() {
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor = dp.rawQuery("Select * From UpLoadeExam", null);
         return cursor;
 
     }

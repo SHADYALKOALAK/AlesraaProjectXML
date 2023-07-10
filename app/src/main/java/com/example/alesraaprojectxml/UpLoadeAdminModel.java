@@ -12,6 +12,11 @@ public class UpLoadeAdminModel {
         this.path = path;
     }
 
+    public UpLoadeAdminModel(String location, String dis) {
+        this.location = location;
+        this.dis = dis;
+    }
+
     public int getId() {
         return id;
     }

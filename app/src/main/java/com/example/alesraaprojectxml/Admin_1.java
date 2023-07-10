@@ -27,10 +27,7 @@ public class Admin_1 extends AppCompatActivity {
             startActivity(facebook);
         });
 
-        binding.imageExportFile.setOnClickListener(v -> {
-            startActivity(new Intent(context, UploodScreen.class));
 
-        });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, Comments_Screen.class));
         });
@@ -40,16 +37,28 @@ public class Admin_1 extends AppCompatActivity {
         binding.iconMassage.setOnClickListener(v -> {
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
         });
+        binding.imageExportFile.setOnClickListener(v -> {
+            Intent intent = new Intent(context, UploodScreen.class);
+            intent.putExtra("flag",1);
+            startActivity(intent);
+
+        });
         binding.imagePost.setOnClickListener(v -> {
-            startActivity(new Intent(context, UploodScreen.class));
+            Intent intent = new Intent(context, UploodScreen.class);
+            intent.putExtra("flag",2);
+            startActivity(intent);
 
         });
         binding.imageHomework.setOnClickListener(v -> {
-            startActivity(new Intent(context, UploodScreen.class));
+            Intent intent = new Intent(context, UploodScreen.class);
+            intent.putExtra("flag",3);
+            startActivity(intent);
 
         });
         binding.imageSpeacke.setOnClickListener(v -> {
-            startActivity(new Intent(context, UploodScreen.class));
+            Intent intent = new Intent(context, UploodScreen.class);
+            intent.putExtra("flag",4);
+            startActivity(intent);
 
         });
 

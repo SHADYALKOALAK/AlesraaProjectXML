@@ -252,6 +252,7 @@
                 android:paddingEnd="10dp"
                 android:paddingTop="5dp"/>
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutFile"
                 android:layout_width="278dp"
                 android:layout_height="57dp"
                 android:layout_gravity="center_horizontal"

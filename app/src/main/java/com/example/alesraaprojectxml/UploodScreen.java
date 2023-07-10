@@ -22,7 +22,6 @@ public class UploodScreen extends AppCompatActivity {
     private ActivityResultLauncher<String> filePickerLauncher;
     private String filePath;
     private CustomdailogBinding customDialog;
-    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +29,67 @@ public class UploodScreen extends AppCompatActivity {
         binding = ActivityUploodScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         dBase = new DBase(context);
+        Intent intent = getIntent();
+        int flag = intent.getIntExtra("flag", -1);
+
+        if (flag == 1) {
+            binding.editLink.setVisibility(View.GONE);
+            binding.editMoreInfo.setVisibility(View.GONE);
+        } else if (flag == 2) {
+            binding.editLink.setVisibility(View.VISIBLE);
+            binding.editMoreInfo.setVisibility(View.GONE);
+            binding.layoutFile.setVisibility(View.GONE);
+            binding.editDescription.setVisibility(View.VISIBLE);
+            binding.editTitle.setVisibility(View.VISIBLE);
+
+        } else if (flag == 3) {
+            binding.editLink.setVisibility(View.GONE);
+            binding.editMoreInfo.setVisibility(View.GONE);
+            binding.layoutFile.setVisibility(View.GONE);
+        } else if (flag == 4) {
+            binding.editMoreInfo.setVisibility(View.GONE);
+            binding.layoutFile.setVisibility(View.GONE);
+            binding.editLink.setVisibility(View.GONE);
+        }
 
 
         binding.btnUpLoade.setOnClickListener(v -> {
             String location = binding.editTitle.getText().toString().trim();
             String dis = binding.editDescription.getText().toString().trim();
             String link = binding.editLink.getText().toString().trim();
-            if (!location.isEmpty() && !dis.isEmpty() && !link.isEmpty()) {
-                showAlertDialog(location, dis, link);
+            switch (flag) {
+                case 1:
+                    if (!location.isEmpty() && !dis.isEmpty() && !filePath.isEmpty()) {
+                        if (dBase.insertAdminFile(new UpLoadeAdminModel(location, dis, filePath))) {
+                            Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
 
-            } else if (!location.isEmpty() && !dis.isEmpty() && !filePath.isEmpty()) {
-                showAlertDialog(location, dis, filePath);
+                case 2:
+                    if (!location.isEmpty() && !dis.isEmpty() && !link.isEmpty()) {
+                        if (dBase.insertExam(new UpLoadeAdminModel(location, dis,link))) {
+                            Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+
+                    }
+                case 3:
+                    if (!location.isEmpty() && !dis.isEmpty()) {
+                        if (dBase.insertAdminDis(new UpLoadeAdminModel(location, dis))) {
+                            Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                case 4:
+                    if (!location.isEmpty() && !dis.isEmpty()) {
+                        if (dBase.insertAdminDis(new UpLoadeAdminModel(location, dis))) {
+                            Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+
             }
-
         });
 
         filePickerLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(),
@@ -75,23 +122,23 @@ public class UploodScreen extends AppCompatActivity {
         filePickerLauncher.launch("application/pdf");
     }
 
-    private void showAlertDialog(String location, String dis, String path) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        customDialog = CustomdailogBinding.inflate(getLayoutInflater());
-        builder.setView(customDialog.getRoot());
-        customDialog.tvMassage.setText("هل أنت متأكد من عملية الرفع");
-        customDialog.tvT.setText("تأكيد الرفع");
-        customDialog.btnYes.setOnClickListener(v1 -> {
-            if (dBase.insertAdminFile(new UpLoadeAdminModel(location, dis, path))) {
-                Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
-        customDialog.btnNo.setOnClickListener(v12 -> {
-            dialog.dismiss();
-        });
-        dialog = builder.create();
-        dialog.show();
-    }
+//    private void showAlertDialog(String location, String dis, String path) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//        customDialog = CustomdailogBinding.inflate(getLayoutInflater());
+//        builder.setView(customDialog.getRoot());
+//        customDialog.tvMassage.setText("هل أنت متأكد من عملية الرفع");
+//        customDialog.tvDis.setText("تأكيد الرفع");
+//        customDialog.btnYes.setOnClickListener(v1 -> {
+//            if (dBase.insertAdminFile(new UpLoadeAdminModel(location, dis, path))) {
+//                Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
+//                finish();
+//            }
+//        });
+//        customDialog.btnNo.setOnClickListener(v12 -> {
+//            dialog.dismiss();
+//        });
+//        dialog = builder.create();
+//        dialog.show();
+//    }
 
 }

@@ -74,6 +74,7 @@
 
 
         <TextView
+            android:id="@+id/tv_exam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -104,6 +105,7 @@
         app:layout_constraintTop_toBottomOf="@id/layout">
 
         <TextView
+            android:id="@+id/tv_dis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -113,6 +115,7 @@
             android:textSize="13sp" />
 
         <TextView
+            android:id="@+id/tv_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
