@@ -13,9 +13,9 @@ import com.example.alesraaprojectxml.databinding.RvHomeworkdescriptionBinding;
 import java.util.ArrayList;
 
 public class AdapterHomeWorkScreen extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    ArrayList<ItemRvHomeWork> arrayList;
-    Context context;
-    RvHomeworkdescriptionBinding binding;
+    private ArrayList<ItemRvHomeWork> arrayList;
+    private Context context;
+    private RvHomeworkdescriptionBinding binding;
 
     public AdapterHomeWorkScreen(ArrayList<ItemRvHomeWork> arrayList, Context context) {
         this.arrayList = arrayList;

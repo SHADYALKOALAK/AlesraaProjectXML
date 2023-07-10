@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.alesraaprojectxml.databinding.ActivityViedoScreenBinding;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,8 @@ public class ViedoScreen extends AppCompatActivity {
     private Rc_Comment rc_comment;
     private DBase dataBase;
     @SuppressLint("Range")
-    String name;
+    private String name;
+    private String path;
 
     @SuppressLint({"Range", "NotifyDataSetChanged"})
     @Override
@@ -36,11 +38,20 @@ public class ViedoScreen extends AppCompatActivity {
         commentsModels = new ArrayList<>();
         dataBase = new DBase(context);
         rc_comment = new Rc_Comment(context, commentsModels);
+
+        Cursor vied = dataBase.getViedon();
+        while (vied.moveToNext()) {
+            path = vied.getString(vied.getColumnIndex(vied.getColumnName(1)));
+            String title = vied.getString(vied.getColumnIndex(vied.getColumnName(2)));
+            String dis = vied.getString(vied.getColumnIndex(vied.getColumnName(3)));
+            binding.tvNameCourses.setText(title);
+            binding.tvDis.setText(dis);
+        }
         Cursor cursor = dataBase.getComment();
         while (cursor.moveToNext()) {
             @SuppressLint("Range") String comment = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
             @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
-            commentsModels.add(new CommentsModel(nameProfile,comment));
+            commentsModels.add(new CommentsModel(nameProfile, comment));
         }
         binding.rcComments.setAdapter(rc_comment);
         binding.rcComments.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
@@ -64,15 +75,20 @@ public class ViedoScreen extends AppCompatActivity {
         binding.iconArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,e_Learning.class));
+                startActivity(new Intent(context, e_Learning.class));
 
             }
         });
         binding.you.setOnClickListener(v -> {
-            Intent facebook = new Intent();
-            facebook.setAction(Intent.ACTION_VIEW);
-            facebook.setData(Uri.parse("https://www.youtube.com/watch?v=eLl-I9PwFyg"));
-            startActivity(facebook);
+            if (!path.isEmpty() && path.contains("http")) {
+                Intent facebook = new Intent();
+                facebook.setAction(Intent.ACTION_VIEW);
+                facebook.setData(Uri.parse(path));
+                startActivity(facebook);
+            }else {
+                Toast.makeText(context, "الرابط غير فعال", Toast.LENGTH_SHORT).show();
+            }
+
         });
         binding.imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,10 +127,6 @@ public class ViedoScreen extends AppCompatActivity {
                 startActivity(new Intent(context, HomePageScreen.class));
             }
         });
-
-
-
-
 
 
     }

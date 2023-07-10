@@ -25,6 +25,7 @@ public class Notices extends AppCompatActivity implements AdapterNotices.ViewHan
     private DBase dBase;
 
 
+
     @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

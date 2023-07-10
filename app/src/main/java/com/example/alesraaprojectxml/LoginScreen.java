@@ -19,7 +19,6 @@ public class LoginScreen extends AppCompatActivity {
     private ActivityLoginScreenBinding binding;
     private Context context = LoginScreen.this;
     private DBase dBase;
-
     SharedPreferences sharedPreferences;
 
     @Override

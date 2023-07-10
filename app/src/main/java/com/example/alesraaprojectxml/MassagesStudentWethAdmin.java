@@ -20,6 +20,7 @@ public class MassagesStudentWethAdmin extends AppCompatActivity {
     private AdapterMassageStudentWithAdmin adapterMassageStudentWithAdmin;
     private DBase dBase;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,16 +30,7 @@ public class MassagesStudentWethAdmin extends AppCompatActivity {
         arrayList = new ArrayList<>();
         dBase = new DBase(context);
         adapterMassageStudentWithAdmin = new AdapterMassageStudentWithAdmin(arrayList, context);
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
-//        arrayList.add(new ItemMassageStudentWithAdmin("Baraa Mohammad","this is title massage","this is massage text"));
+//
         Cursor cursor = dBase.getMassage();
         while (cursor.moveToNext()) {
             @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(DBase.COL_NAME_PERSONAL));
@@ -60,7 +52,7 @@ public class MassagesStudentWethAdmin extends AppCompatActivity {
         binding.imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,Admin_1.class));
+                startActivity(new Intent(context, Admin_1.class));
             }
         });
     }

@@ -57,7 +57,7 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
         //
         binding.rcCourses.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, true));
         binding.rcLectureName.setAdapter(rcLecture);
-
+        //
         Cursor cursor = dBase.getComment();
         while (cursor.moveToNext()) {
             @SuppressLint("Range") String nameProfile = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2)));

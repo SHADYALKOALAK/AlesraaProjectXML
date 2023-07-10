@@ -1,10 +1,10 @@
 package com.example.alesraaprojectxml;
 
 public class ItemRecyclerNoticesScreen {
-    String nameCourse;
-    String description;
-    int image;
-    String date;
+   private String nameCourse;
+   private String description;
+   private int image;
+   private String date;
 
     public int getId() {
         return id;

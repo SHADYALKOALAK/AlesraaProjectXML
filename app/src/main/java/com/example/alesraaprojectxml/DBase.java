@@ -15,7 +15,7 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME = "user_name";
     public static final String COL_NUMBER = "numberUser";
     public static final String COL_PASSWORD = "user_password";
-    public static final int DB_VERSION = 22;
+    public static final int DB_VERSION = 23;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
     public static final String TN_MASSAGE = "massageToAdmin";
@@ -48,6 +48,7 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE Noty (id INTEGER Primary key AUTOINCREMENT,notyfcations TEXT)");
         db.execSQL("CREATE TABLE CommentAdmin (id INTEGER Primary key AUTOINCREMENT,commentAdmin TEXT)");
         db.execSQL("CREATE TABLE MarkAdmin (id INTEGER Primary key AUTOINCREMENT,mark TEXT,name TEXT)");
+        db.execSQL("CREATE TABLE ViedoAdmin (id INTEGER Primary key AUTOINCREMENT,pathVideo TEXT,title TEXT,disViedo TEXT)");
         //
     }
 
@@ -62,6 +63,7 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS UpLoadeExam");
         db.execSQL("DROP TABLE IF EXISTS CommentAdmin");
         db.execSQL("DROP TABLE IF EXISTS MarkAdmin");
+        db.execSQL("DROP TABLE IF EXISTS ViedoAdmin");
         onCreate(db);
 
     }
@@ -217,19 +219,36 @@ public class DBase extends SQLiteOpenHelper {
 
     }
 
-    public boolean insertMarkAdmin(String mark,String name) {
+    public boolean insertMarkAdmin(String mark, String name) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("mark", mark);
         values.put("name", name);
         long re = database.insert("MarkAdmin", null, values);
         return re != -1;
-
     }
 
     public Cursor getMarkAdmin() {
         SQLiteDatabase dp = this.getReadableDatabase();
         Cursor cursor = dp.rawQuery("Select * From MarkAdmin", null);
+        return cursor;
+
+    }
+
+    public boolean insertViedo(UpLoadeAdminModel model) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("pathVideo", model.getPath());
+        values.put("title", model.getLocation());
+        values.put("disViedo", model.getDis());
+        long re = database.insert("ViedoAdmin", null, values);
+        return re != -1;
+
+    }
+
+    public Cursor getViedon() {
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor = dp.rawQuery("Select * From ViedoAdmin", null);
         return cursor;
 
     }
