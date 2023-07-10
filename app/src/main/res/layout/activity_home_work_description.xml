@@ -14,6 +14,17 @@
         android:src="@drawable/ic_baseline_arrow_forward_ios_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تصميم تجربة المستخدم"
+        android:textSize="15sp"
+        android:textColor="#B46A3C"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        app:layout_constraintEnd_toEndOf="@id/tv_description"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"/>
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/image_profile"
@@ -78,15 +89,17 @@
         android:textColor="#B46A3C"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
+        android:id="@+id/rv"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="15dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_description">
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        android:layout_marginBottom="10dp">
 
 
     </androidx.recyclerview.widget.RecyclerView>

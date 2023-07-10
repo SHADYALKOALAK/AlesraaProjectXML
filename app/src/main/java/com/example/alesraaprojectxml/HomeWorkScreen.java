@@ -131,7 +131,7 @@ public class HomeWorkScreen extends AppCompatActivity {
             public void onClick(View v) {
                 int visibility=binding.iconFile.getVisibility();
                 if (visibility == 0){
-                    startActivity(new Intent(context,SearchCourse.class));
+                    startActivity(new Intent(context,HomeWorkDescription.class));
 
                 }
             }

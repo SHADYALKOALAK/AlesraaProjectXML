@@ -1,7 +1,9 @@
 package com.example.alesraaprojectxml;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -34,6 +36,12 @@ public class AdapterMassageStudentWithAdmin extends RecyclerView.Adapter<Recycle
         myAdapter.binding.tvNameStudent.setText(arrayList.get(position).getNameStudent());
         myAdapter.binding.tvComments.setText(arrayList.get(position).getMassage());
         myAdapter.binding.tvTitleMassage.setText(arrayList.get(position).getTitleMassage());
+        myAdapter.binding.btnReply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context,ReplyAdmin.class));
+            }
+        });
 
 
 
