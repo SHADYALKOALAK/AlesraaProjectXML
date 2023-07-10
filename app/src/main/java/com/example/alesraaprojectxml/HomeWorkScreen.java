@@ -75,6 +75,10 @@ public class HomeWorkScreen extends AppCompatActivity {
             intent.setData(Uri.parse("https://student.israa.edu.ps"));
             startActivity(intent);
         });
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, HomeWorkDescription.class));
+        });
+
         binding.btnSend.setOnClickListener(v -> {
             int vi = binding.iconFile.getVisibility();
             if (vi != 0) {
@@ -121,6 +125,18 @@ public class HomeWorkScreen extends AppCompatActivity {
 
             }
         });
+
+        binding.iconFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int visibility=binding.iconFile.getVisibility();
+                if (visibility == 0){
+                    startActivity(new Intent(context,SearchCourse.class));
+
+                }
+            }
+        });
+
 
 
     }

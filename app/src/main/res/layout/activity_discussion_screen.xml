@@ -137,21 +137,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout2" />
 
-    <ImageView
-        android:id="@+id/image"
+    <EditText
+        android:id="@+id/edit_reply"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_login"
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_w"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_reply" />
+        app:layout_constraintTop_toBottomOf="@id/tv_reply"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/black" />
 
 
 
     <Button
         android:id="@+id/btn_reply"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="33dp"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="12sp"
@@ -161,7 +169,10 @@
         android:text="إضافة الرد"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        app:layout_constraintTop_toBottomOf="@id/edit_reply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
     <EditText
@@ -172,6 +183,8 @@
         android:layout_marginTop="34dp"
         android:background="@drawable/ed_shape"
         android:padding="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_reply" />
 
     <TextView
@@ -248,6 +261,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icon_model"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/icon_model" />
@@ -271,6 +285,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icon_homework"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/icon_homework" />
@@ -294,6 +309,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icon_education"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/img_l" />
@@ -321,6 +337,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/iconProfile"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/img_1" />

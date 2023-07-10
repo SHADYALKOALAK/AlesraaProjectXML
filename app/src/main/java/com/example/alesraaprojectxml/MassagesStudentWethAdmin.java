@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.alesraaprojectxml.databinding.ActivityMassagesStudentWethAdminBinding;
 
@@ -55,6 +56,12 @@ public class MassagesStudentWethAdmin extends AppCompatActivity {
         });
         binding.iconComment.setOnClickListener(v -> {
             startActivity(new Intent(context, CommentsAdmin.class));
+        });
+        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,Admin_1.class));
+            }
         });
     }
 }

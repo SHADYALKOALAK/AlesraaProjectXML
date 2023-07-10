@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.alesraaprojectxml.databinding.ActivityCommentsAdminBinding;
 
@@ -41,6 +42,12 @@ public class CommentsAdmin extends AppCompatActivity {
         });
         binding.iconMassage.setOnClickListener(v -> {
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
+        });
+        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,Admin_1.class));
+            }
         });
 
     }

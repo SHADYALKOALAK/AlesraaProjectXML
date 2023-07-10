@@ -96,7 +96,7 @@ public class e_Learning extends AppCompatActivity {
         binding.tvExportHomeWork1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,ViedoScreen.class));
+                startActivity(new Intent(context,HomeWorkScreen.class));
             }
         });
         binding.tvQuiz.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +109,12 @@ public class e_Learning extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context,DiscussionScreen.class));
+            }
+        });
+        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "هذه الصفحة غير متوفرة حالياً", Toast.LENGTH_SHORT).show();
             }
         });
 

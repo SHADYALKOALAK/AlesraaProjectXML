@@ -42,7 +42,11 @@
         </activity>
         <activity
             android:name=".Admin_1"
-            android:exported="false">
+            android:exported="true">
+
+
+
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -78,7 +82,8 @@
         </activity>
         <activity
             android:name=".SureSend"
-            android:exported="false">
+            android:exported="true">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -119,6 +124,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
 
             <meta-data
                 android:name="android.app.lib_name"
