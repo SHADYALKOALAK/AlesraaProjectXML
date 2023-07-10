@@ -40,7 +40,10 @@ public class HomeWorkDescription extends AppCompatActivity {
         binding.rv.setAdapter(adapter);
         binding.rv.setLayoutManager(linearLayoutManager);
         binding.imageProfile.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);
         });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, HomeWorkDescription.class));
@@ -52,7 +55,10 @@ public class HomeWorkDescription extends AppCompatActivity {
             startActivity(intent);
         });
         binding.iconProfile.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);
         });
 
 

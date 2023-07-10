@@ -61,9 +61,6 @@ public class RegisteredCourses extends AppCompatActivity implements Rc_courses.H
         binding.icNot.setOnClickListener(v -> {
             startActivity(new Intent(context, Notices.class));
         });
-        binding.iconArrow.setOnClickListener(v -> {
-            finish();
-        });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, HomeWorkDescription.class));
         });
@@ -74,12 +71,23 @@ public class RegisteredCourses extends AppCompatActivity implements Rc_courses.H
             startActivity(intent);
         });
         binding.iconProfile.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
-        });
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);        });
         binding.iconEducation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, HomePageScreen.class));
+            }
+        });
+        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent c = new Intent();
+                c.setAction(Intent.ACTION_VIEW);
+                c.setData(Uri.parse("https://student.israa.edu.ps/"));
+                startActivity(c);
             }
         });
     }

@@ -72,8 +72,10 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
             startActivity(facebook);
         });
         binding.imageProfile.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
-        });
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);        });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, HomeWorkDescription.class));
         });
@@ -84,8 +86,10 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
             startActivity(intent);
         });
         binding.iconProfileScreen.setOnClickListener(v -> {
-            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
-        });
+            Intent c = new Intent();
+            c.setAction(Intent.ACTION_VIEW);
+            c.setData(Uri.parse("https://student.israa.edu.ps/"));
+            startActivity(c);        });
 
     }
 
