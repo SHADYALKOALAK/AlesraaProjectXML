@@ -107,10 +107,11 @@ public class DiscussionScreen extends AppCompatActivity {
         binding.btnReply.setOnClickListener(v -> {
             String commentAdmin = binding.editReply.getText().toString().trim();
             if (commentAdmin.isEmpty()) {
-                binding.editReply.setText("أدخل الرد من فضلك");
+                binding.editReply.setError("أدخل الرد من فضلك");
             } else {
                 if (dBase.insertCommentAdmin(commentAdmin)) {
                     Toast.makeText(context, "تم إضافة الرد", Toast.LENGTH_SHORT).show();
+                    binding.editReply.setText("");
                 }
             }
         });
