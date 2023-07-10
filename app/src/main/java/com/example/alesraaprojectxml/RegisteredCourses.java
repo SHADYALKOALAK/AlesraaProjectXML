@@ -9,8 +9,10 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.alesraaprojectxml.databinding.ActivityRegisteredCoursesBinding;
 
@@ -58,6 +60,27 @@ public class RegisteredCourses extends AppCompatActivity implements Rc_courses.H
         });
         binding.icNot.setOnClickListener(v -> {
             startActivity(new Intent(context, Notices.class));
+        });
+        binding.iconArrow.setOnClickListener(v -> {
+            finish();
+        });
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, HomeWorkDescription.class));
+        });
+        binding.iconModel.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://elearn.israa.edu.ps/"));
+            startActivity(intent);
+        });
+        binding.iconProfile.setOnClickListener(v -> {
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+        });
+        binding.iconEducation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, HomePageScreen.class));
+            }
         });
     }
 

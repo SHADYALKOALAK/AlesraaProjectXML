@@ -39,6 +39,21 @@ public class HomeWorkDescription extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
         binding.rv.setAdapter(adapter);
         binding.rv.setLayoutManager(linearLayoutManager);
+        binding.imageProfile.setOnClickListener(v -> {
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+        });
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, HomeWorkDescription.class));
+        });
+        binding.iconModel.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://elearn.israa.edu.ps/"));
+            startActivity(intent);
+        });
+        binding.iconProfile.setOnClickListener(v -> {
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
+        });
 
 
 

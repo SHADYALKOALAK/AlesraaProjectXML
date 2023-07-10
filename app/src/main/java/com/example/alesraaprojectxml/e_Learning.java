@@ -48,7 +48,7 @@ public class e_Learning extends AppCompatActivity {
         binding.imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
             }
         });
         binding.icNot.setOnClickListener(new View.OnClickListener() {
@@ -60,14 +60,14 @@ public class e_Learning extends AppCompatActivity {
         binding.iconModel.setOnClickListener(v -> {
             Intent c = new Intent();
             c.setAction(Intent.ACTION_VIEW);
-            c.setData(Uri.parse("https://student.israa.edu.ps"));
+            c.setData(Uri.parse("https://elearn.israa.edu.ps/"));
             startActivity(c);
         });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, HomeWorkDescription.class));
         });
         binding.iconProfileScreen.setOnClickListener(v -> {
-            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
         });
         binding.iconEducation.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -35,46 +35,8 @@ public class Notices extends AppCompatActivity implements AdapterNotices.ViewHan
         dBase = new DBase(context);
         arrayList = new ArrayList<>();
         arrayList_2 = new ArrayList<>();
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
-//        arrayList_2.add(new ItemRecyclerNoticesScreen("مساق تصميم تجربة المستخدم", "تم إضافة واجب جديد"
-//                , R.drawable.logo_2, "قبل 3 ساعات"));
+
+
         Cursor notifications = dBase.getNotifications();
         while (notifications.moveToNext()) {
             @SuppressLint("Range") String noty = notifications.getString(notifications.getColumnIndex(notifications.getColumnName(1)));
@@ -93,16 +55,16 @@ public class Notices extends AppCompatActivity implements AdapterNotices.ViewHan
             finish();
         });
         binding.iconHomework.setOnClickListener(v -> {
-            startActivity(new Intent(context, HomeWorkScreen.class));
+            startActivity(new Intent(context, HomeWorkDescription.class));
         });
         binding.iconModel.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://ar.israa.edu.ps"));
+            intent.setData(Uri.parse("https://elearn.israa.edu.ps/"));
             startActivity(intent);
         });
         binding.iconHomePage.setOnClickListener(v -> {
-            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
         });
         binding.iconOnlineLearn.setOnClickListener(new View.OnClickListener() {
             @Override

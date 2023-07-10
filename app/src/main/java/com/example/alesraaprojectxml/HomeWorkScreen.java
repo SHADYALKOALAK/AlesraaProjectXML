@@ -73,10 +73,10 @@ public class HomeWorkScreen extends AppCompatActivity {
             startActivity(new Intent(context, Notices.class));
         });
         binding.imageProfile.setOnClickListener(v -> {
-            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
         });
         binding.iconProfileScreen.setOnClickListener(v -> {
-            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
         });
         binding.iconEducation.setOnClickListener(v -> {
             startActivity(new Intent(context, HomePageScreen.class));
@@ -84,7 +84,7 @@ public class HomeWorkScreen extends AppCompatActivity {
         binding.iconModel.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://student.israa.edu.ps"));
+            intent.setData(Uri.parse("https://elearn.israa.edu.ps/"));
             startActivity(intent);
         });
         binding.iconHomework.setOnClickListener(v -> {
