@@ -17,10 +17,13 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
     Context context;
     ArrayList<ItemRvHomeWorkExport> arrayList;
     RvExporthomworkscreendesignBinding binding;
+    ViewHandle_inter viewHandle_inter;
 
-    public AdapterHomeWorkExport(Context context, ArrayList<ItemRvHomeWorkExport> arrayList) {
+
+    public AdapterHomeWorkExport(Context context, ArrayList<ItemRvHomeWorkExport> arrayList,ViewHandle_inter viewHandle_inter) {
         this.context = context;
         this.arrayList = arrayList;
+        this.viewHandle_inter=viewHandle_inter;
         //
     }
 
@@ -36,8 +39,13 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
         MyAdapter myAdapter= (MyAdapter) holder;
         myAdapter.binding.tvNameCourse.setText(arrayList.get(position).getNameCourse());
         myAdapter.binding.tvNameStudent.setText(arrayList.get(position).getName());
+        binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewHandle_inter.ClickHandle(position);
 
-
+            }
+        });
 
     }
 
@@ -52,4 +60,8 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
             this.binding=binding;
         }
     }
+    public interface ViewHandle_inter {
+        void ClickHandle(int pos);
+    }
+
 }

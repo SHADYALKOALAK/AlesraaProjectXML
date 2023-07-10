@@ -1,5 +1,6 @@
 package com.example.alesraaprojectxml;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -13,12 +14,14 @@ import com.example.alesraaprojectxml.databinding.ActivityCommentsScreenBinding;
 
 import java.util.ArrayList;
 
-public class Comments_Screen extends AppCompatActivity {
+public class Comments_Screen extends AppCompatActivity implements AdapterHomeWorkExport.ViewHandle_inter {
     private ArrayList<ItemRvHomeWorkExport> arrayList;
     private Context context = Comments_Screen.this;
     private AdapterHomeWorkExport adapterHomeWorkExport;
     private DBase dBase;
     private String nameProfile;
+    AdapterHomeWorkExport.ViewHandle_inter viewHandle_inter;
+
 
     @SuppressLint("Range")
     @Override
@@ -38,7 +41,7 @@ public class Comments_Screen extends AppCompatActivity {
 //        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
 //        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
 //        arrayList.add(new ItemRvHomeWorkExport("Baraa Mohammad", "java"));
-        adapterHomeWorkExport = new AdapterHomeWorkExport(context, arrayList);
+        adapterHomeWorkExport = new AdapterHomeWorkExport(context, arrayList,viewHandle_inter);
         binding.rv.setAdapter(adapterHomeWorkExport);
         binding.rv.setLayoutManager(new LinearLayoutManager(context));
         Cursor name = dBase.getComment();
@@ -53,13 +56,25 @@ public class Comments_Screen extends AppCompatActivity {
         }
 
 
-//
         binding.iconComment.setOnClickListener(v -> {
             startActivity(new Intent(context, CommentsAdmin.class));
         });
         binding.iconMassage.setOnClickListener(v -> {
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
         });
+
+
+
+    }
+
+    @Override
+    public void ClickHandle(int pos) {
+
+
+
+
+
+
 
 
     }
