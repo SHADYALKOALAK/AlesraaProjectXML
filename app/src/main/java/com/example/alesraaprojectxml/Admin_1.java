@@ -40,6 +40,19 @@ public class Admin_1 extends AppCompatActivity {
         binding.iconMassage.setOnClickListener(v -> {
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
         });
+        binding.imagePost.setOnClickListener(v -> {
+            startActivity(new Intent(context, UploodScreen.class));
+
+        });
+        binding.iconHomework.setOnClickListener(v -> {
+            startActivity(new Intent(context, UploodScreen.class));
+
+        });
+        binding.imageSpeacke.setOnClickListener(v -> {
+            startActivity(new Intent(context, UploodScreen.class));
+
+        });
+
 //
     }
 }

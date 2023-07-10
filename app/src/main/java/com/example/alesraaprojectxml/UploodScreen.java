@@ -37,10 +37,10 @@ public class UploodScreen extends AppCompatActivity {
             String dis = binding.editDescription.getText().toString().trim();
             String link = binding.editLink.getText().toString().trim();
             if (!location.isEmpty() && !dis.isEmpty() && !link.isEmpty()) {
-                showAlertDialog(location,dis,link);
+                showAlertDialog(location, dis, link);
 
             } else if (!location.isEmpty() && !dis.isEmpty() && !filePath.isEmpty()) {
-                showAlertDialog(location,dis,filePath);
+                showAlertDialog(location, dis, filePath);
             }
 
         });
@@ -75,7 +75,7 @@ public class UploodScreen extends AppCompatActivity {
         filePickerLauncher.launch("application/pdf");
     }
 
-    private void showAlertDialog(String location,String dis,String path) {
+    private void showAlertDialog(String location, String dis, String path) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         customDialog = CustomdailogBinding.inflate(getLayoutInflater());
         builder.setView(customDialog.getRoot());
