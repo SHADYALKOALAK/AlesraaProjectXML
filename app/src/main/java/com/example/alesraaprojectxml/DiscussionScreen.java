@@ -64,9 +64,9 @@ public class DiscussionScreen extends AppCompatActivity {
 
 
         Cursor massage = dBase.getAdminDis();
-        while (massage.moveToNext()){
-            String location =massage.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
-            String dis =massage.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
+        while (massage.moveToNext()) {
+            String location = massage.getString(cursor.getColumnIndex(cursor.getColumnName(1)));
+            String dis = massage.getString(cursor.getColumnIndex(cursor.getColumnName(2)));
             binding.tvDis.setText(location);
             binding.tvMassage.setText(dis);
         }
@@ -102,12 +102,20 @@ public class DiscussionScreen extends AppCompatActivity {
                 startActivity(new Intent(context, HomePageScreen.class));
             }
         });
-        binding.iconArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
+        binding.iconArrow.setOnClickListener(v -> finish());
+
+        binding.btnReply.setOnClickListener(v -> {
+            String commentAdmin = binding.editReply.getText().toString().trim();
+            if (commentAdmin.isEmpty()) {
+                binding.editReply.setError("أدخل الرد من فضلك");
+            } else {
+                if (dBase.insertCommentAdmin(commentAdmin)) {
+                    Toast.makeText(context, "تم إضافة الرد", Toast.LENGTH_SHORT).show();
+                    binding.editReply.setText("");
+                }
             }
         });
+
 
     }
 
