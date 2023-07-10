@@ -15,7 +15,7 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME = "user_name";
     public static final String COL_NUMBER = "numberUser";
     public static final String COL_PASSWORD = "user_password";
-    public static final int DB_VERSION = 20;
+    public static final int DB_VERSION = 22;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
     public static final String TN_MASSAGE = "massageToAdmin";
@@ -47,6 +47,7 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE UpLoadeExam (id INTEGER Primary key AUTOINCREMENT,location TEXT,dis TEXT ,path TEXT)");
         db.execSQL("CREATE TABLE Noty (id INTEGER Primary key AUTOINCREMENT,notyfcations TEXT)");
         db.execSQL("CREATE TABLE CommentAdmin (id INTEGER Primary key AUTOINCREMENT,commentAdmin TEXT)");
+        db.execSQL("CREATE TABLE MarkAdmin (id INTEGER Primary key AUTOINCREMENT,mark TEXT,name TEXT)");
         //
     }
 
@@ -60,6 +61,7 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS UpLoadeToDis");
         db.execSQL("DROP TABLE IF EXISTS UpLoadeExam");
         db.execSQL("DROP TABLE IF EXISTS CommentAdmin");
+        db.execSQL("DROP TABLE IF EXISTS MarkAdmin");
         onCreate(db);
 
     }
@@ -198,6 +200,7 @@ public class DBase extends SQLiteOpenHelper {
         return cursor;
 
     }
+
     public boolean insertCommentAdmin(String commentAdmin) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -210,6 +213,23 @@ public class DBase extends SQLiteOpenHelper {
     public Cursor getCommentAdmin() {
         SQLiteDatabase dp = this.getReadableDatabase();
         Cursor cursor = dp.rawQuery("Select * From CommentAdmin", null);
+        return cursor;
+
+    }
+
+    public boolean insertMarkAdmin(String mark,String name) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("mark", mark);
+        values.put("name", name);
+        long re = database.insert("MarkAdmin", null, values);
+        return re != -1;
+
+    }
+
+    public Cursor getMarkAdmin() {
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor = dp.rawQuery("Select * From MarkAdmin", null);
         return cursor;
 
     }

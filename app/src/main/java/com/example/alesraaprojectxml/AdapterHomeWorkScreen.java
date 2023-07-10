@@ -36,6 +36,8 @@ public class AdapterHomeWorkScreen extends RecyclerView.Adapter<RecyclerView.Vie
         myViewHolder.binding.nameHomework.setText(arrayList.get(position).getNameHomWork());
 
 
+
+
     }
 
     @Override
