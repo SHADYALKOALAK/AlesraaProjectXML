@@ -15,7 +15,7 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME = "user_name";
     public static final String COL_NUMBER = "numberUser";
     public static final String COL_PASSWORD = "user_password";
-    public static final int DB_VERSION = 17;
+    public static final int DB_VERSION = 18;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
     public static final String TN_MASSAGE = "massageToAdmin";
@@ -45,6 +45,7 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE UpLoadeAdmin (id INTEGER Primary key AUTOINCREMENT,locationAdmin TEXT,disAdmin TEXT ,pathAdmin TEXT)");
         db.execSQL("CREATE TABLE UpLoadeToDis (id INTEGER Primary key AUTOINCREMENT,locationDis TEXT,disDis TEXT)");
         db.execSQL("CREATE TABLE UpLoadeExam (id INTEGER Primary key AUTOINCREMENT,location TEXT,dis TEXT ,path TEXT)");
+        db.execSQL("CREATE TABLE Noty (id INTEGER Primary key AUTOINCREMENT,notyfcations TEXT)");
         //
     }
 
@@ -176,6 +177,22 @@ public class DBase extends SQLiteOpenHelper {
     public Cursor getExam() {
         SQLiteDatabase dp = this.getReadableDatabase();
         Cursor cursor = dp.rawQuery("Select * From UpLoadeExam", null);
+        return cursor;
+
+    }
+
+    public boolean insertNotifications(String notifications) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("notyfcations", notifications);
+        long re = database.insert("Noty", null, values);
+        return re != -1;
+
+    }
+
+    public Cursor getNotifications() {
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor = dp.rawQuery("Select * From Noty", null);
         return cursor;
 
     }
