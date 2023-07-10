@@ -1,5 +1,6 @@
 package com.example.alesraaprojectxml;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.alesraaprojectxml.databinding.ActivityHomePageScreenBinding;
+import com.example.alesraaprojectxml.databinding.CustomdailogBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,10 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
     private RcLecture rcLecture;
     private Rc_courses.Handle handle;
     private DBase dBase;
-    //
+    private AlertDialog alertDialog;
+    private CustomdailogBinding customdailogBinding;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +95,40 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
             c.setAction(Intent.ACTION_VIEW);
             c.setData(Uri.parse("https://student.israa.edu.ps/"));
             startActivity(c);        });
+        binding.imageLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                customdailogBinding = CustomdailogBinding.inflate(getLayoutInflater());
+                builder.setView(customdailogBinding.getRoot());
+                customdailogBinding.tvMassage.setText("هل أنت متأكد من تسجيل الخروج");
+                customdailogBinding.tvDis.setText("رسالة تأكيد");
+                customdailogBinding.btnYes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        SharedPreferences sharedPreferences=getSharedPreferences("login_save",MODE_PRIVATE);
+                        SharedPreferences.Editor sh= sharedPreferences.edit();
+                        sh.clear();
+                        Toast.makeText(HomePageScreen.this, "تم تسجيل الخروج بنجاح", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(context,LoginScreen.class));
+                        sh.apply();
+
+                    }
+                });
+                customdailogBinding.btnNo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog = builder.create();
+                alertDialog.setCancelable(false);
+                alertDialog.show();
+        }
+        });
 
     }
+
 
 
     @Override
