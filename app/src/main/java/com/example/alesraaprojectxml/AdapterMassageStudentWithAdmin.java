@@ -13,9 +13,9 @@ import com.example.alesraaprojectxml.databinding.RvdesignmassageswithadminBindin
 import java.util.ArrayList;
 
 public class AdapterMassageStudentWithAdmin extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    ArrayList<ItemMassageStudentWithAdmin>arrayList;
-    Context context;
-    RvdesignmassageswithadminBinding binding;
+   private ArrayList<ItemMassageStudentWithAdmin>arrayList;
+   private Context context;
+   private RvdesignmassageswithadminBinding binding;
 
     public AdapterMassageStudentWithAdmin(ArrayList<ItemMassageStudentWithAdmin> arrayList, Context context) {
         this.arrayList = arrayList;

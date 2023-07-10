@@ -26,7 +26,6 @@ public class FileScreen extends AppCompatActivity {
     private DBase dataBase;
     private String name;
 
-
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,9 +1,9 @@
 package com.example.alesraaprojectxml;
 
 public class ItemMassageStudentWithAdmin {
-    String nameStudent;
-    String titleMassage;
-    String massage;
+    private String nameStudent;
+    private String titleMassage;
+    private String massage;
 
     public ItemMassageStudentWithAdmin(String nameStudent, String titleMassage, String massage) {
         this.nameStudent = nameStudent;

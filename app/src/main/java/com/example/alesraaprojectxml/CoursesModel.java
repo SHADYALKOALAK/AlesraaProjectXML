@@ -5,6 +5,7 @@ public class   CoursesModel {
     private String nameCourses;
     private String idCourses;
 
+
     public CoursesModel(int image, String nameCourses, String idCourses) {
         this.image = image;
         this.nameCourses = nameCourses;

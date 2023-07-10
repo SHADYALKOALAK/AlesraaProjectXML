@@ -21,6 +21,7 @@ public class AdapterCommentsAdmin extends RecyclerView.Adapter<RecyclerView.View
         this.context = context;
         this.arrayList = arrayList;
         //
+
     }
 
     @NonNull

@@ -18,8 +18,7 @@ public class Comments_Screen extends AppCompatActivity implements AdapterHomeWor
     private AdapterHomeWorkExport adapterHomeWorkExport;
     private DBase dBase;
     private String nameProfile;
-    AdapterHomeWorkExport.ViewHandle_inter viewHandle_inter;
-
+    private AdapterHomeWorkExport.ViewHandle_inter viewHandle_inter;
 
 
 

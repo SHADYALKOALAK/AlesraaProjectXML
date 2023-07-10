@@ -226,7 +226,6 @@ public class DBase extends SQLiteOpenHelper {
         values.put("name", name);
         long re = database.insert("MarkAdmin", null, values);
         return re != -1;
-
     }
 
     public Cursor getMarkAdmin() {

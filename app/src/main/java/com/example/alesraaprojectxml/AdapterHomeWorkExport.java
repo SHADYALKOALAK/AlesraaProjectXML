@@ -33,6 +33,7 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
         this.viewHandle_inter = viewHandle_inter;
         dBase = new DBase(context);
         //
+
     }
 
     @NonNull

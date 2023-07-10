@@ -26,6 +26,7 @@ public class ExamScreen extends AppCompatActivity {
     private DBase dBase;
     private String name;
 
+
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

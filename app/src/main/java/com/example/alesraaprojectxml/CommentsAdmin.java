@@ -21,6 +21,7 @@ public class CommentsAdmin extends AppCompatActivity {
     private DBase dBase;
     private String nameProfile;
 
+
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

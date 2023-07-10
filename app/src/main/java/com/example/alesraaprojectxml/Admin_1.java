@@ -61,7 +61,5 @@ public class Admin_1 extends AppCompatActivity {
             intent.putExtra("flag",5);
             startActivity(intent);
         });
-
-//
     }
 }
