@@ -79,6 +79,8 @@ public class UploodScreen extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         customDialog = CustomdailogBinding.inflate(getLayoutInflater());
         builder.setView(customDialog.getRoot());
+        customDialog.tvMassage.setText("هل أنت متأكد من عملية الرفع");
+        customDialog.tvT.setText("تأكيد الرفع");
         customDialog.btnYes.setOnClickListener(v1 -> {
             if (dBase.insertAdminFile(new UpLoadeAdminModel(location, dis, path))) {
                 Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();

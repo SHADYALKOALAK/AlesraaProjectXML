@@ -44,7 +44,7 @@ public class Admin_1 extends AppCompatActivity {
             startActivity(new Intent(context, UploodScreen.class));
 
         });
-        binding.iconHomework.setOnClickListener(v -> {
+        binding.imageHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, UploodScreen.class));
 
         });
