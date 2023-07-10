@@ -34,7 +34,7 @@ public class HomeWorkDescription extends AppCompatActivity {
         while (marks.moveToNext()) {
             @SuppressLint("Range") String mark = marks.getString(marks.getColumnIndex(marks.getColumnName(1)));
             @SuppressLint("Range") String name = marks.getString(marks.getColumnIndex(marks.getColumnName(2)));
-            arrayList.add(new ItemRvHomeWork("تصميم واجهات الموبايل",mark));
+            arrayList.add(new ItemRvHomeWork(name, mark));
 
         }
 
@@ -43,6 +43,7 @@ public class HomeWorkDescription extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         binding.rv.setAdapter(adapter);
         binding.rv.setLayoutManager(linearLayoutManager);
+
         binding.imageProfile.setOnClickListener(v -> {
             Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
         });

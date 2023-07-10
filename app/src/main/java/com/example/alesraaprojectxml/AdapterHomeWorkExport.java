@@ -56,11 +56,14 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
             builder.setView(dailogMarks.getRoot());
             dailogMarks.imageAdd.setOnClickListener(v1 -> {
                 String mark = dailogMarks.editMarks.getText().toString().trim();
+                int mark1 = Integer.parseInt(mark);
                 if (mark.isEmpty()) {
                     dailogMarks.editMarks.setError("أدخل درجة الطالب ");
+                } else if (mark1 > 10) {
+                    dailogMarks.editMarks.setError("يجب عليك إدخال العلامة من 10 ");
                 } else {
-                    if (dBase.insertMarkAdmin(mark, arrayList.get(position).name)) {
-                        Toast.makeText(context, "نم إرسال العلامة", Toast.LENGTH_SHORT).show();
+                    if (dBase.insertMarkAdmin(mark, arrayList.get(position).nameCourse)) {
+                        Toast.makeText(context, " تم إرسال العلامة", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
                 }
