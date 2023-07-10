@@ -74,7 +74,7 @@ public class HomePageScreen extends AppCompatActivity implements Rc_courses.Hand
             Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
         });
         binding.iconHomework.setOnClickListener(v -> {
-            startActivity(new Intent(context, HomeWorkScreen.class));
+            startActivity(new Intent(context, HomeWorkDescription.class));
         });
         binding.iconModel.setOnClickListener(v -> {
             Intent intent = new Intent();

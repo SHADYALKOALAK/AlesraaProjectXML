@@ -64,7 +64,7 @@ public class e_Learning extends AppCompatActivity {
             startActivity(c);
         });
         binding.iconHomework.setOnClickListener(v -> {
-            startActivity(new Intent(context, HomeWorkScreen.class));
+            startActivity(new Intent(context, HomeWorkDescription.class));
         });
         binding.iconProfileScreen.setOnClickListener(v -> {
             Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
@@ -75,6 +75,48 @@ public class e_Learning extends AppCompatActivity {
                 startActivity(new Intent(context, HomePageScreen.class));
             }
         });
+        binding.tvYou.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,ViedoScreen.class));
+            }
+        });
+        binding.tvFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,FileScreen.class));
+            }
+        });
+        binding.tvExportHomeWork.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,HomeWorkScreen.class));
+            }
+        });
+        binding.tvExportHomeWork1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,ViedoScreen.class));
+            }
+        });
+        binding.tvQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,ExamScreen.class));
+            }
+        });
+        binding.tvTook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,DiscussionScreen.class));
+            }
+        });
+
+
+
+
+
+
 
 
     }

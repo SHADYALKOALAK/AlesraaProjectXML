@@ -288,7 +288,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingEnd="5dp"
-                android:text=" أخلاقيات المهنة "
+                android:text=" تصميم تجربة المستخدم 1 "
                 android:textColor="#707070" />
 
             <TextView
@@ -339,6 +339,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="15dp">
                 <TextView
+                    android:id="@+id/tv_you"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" التفاصيل..."
@@ -348,7 +349,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/icon_youtupe"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم  "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -365,6 +366,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="15dp">
                 <TextView
+                    android:id="@+id/tv_File"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" التفاصيل..."
@@ -374,7 +376,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/pdf"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -391,6 +393,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="15dp">
                 <TextView
+                    android:id="@+id/tv_exportHomeWork_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" التفاصيل..."
@@ -400,7 +403,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/pdf_2"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -428,6 +431,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="15dp">
                 <TextView
+                    android:id="@+id/tv_Quiz"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" التفاصيل..."
@@ -436,8 +440,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/icon_youtupe"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:drawableEnd="@drawable/group39073"
+                    android:text="20/9/2022 اختبار قصير"
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -454,6 +458,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="15dp">
                 <TextView
+                    android:id="@+id/tv_took"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" التفاصيل..."
@@ -462,9 +467,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/pdf"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:drawableEnd="@drawable/group38914"
+                    android:text="20/9/2022 نقاش "
                     android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
                     android:layout_weight="1"
                     android:textColor="#030303"
                     android:textSize="12sp"/>
@@ -480,6 +486,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="15dp">
                 <TextView
+                    android:id="@+id/tv_exportHomeWork"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" التفاصيل..."
@@ -489,7 +496,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/pdf_2"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -526,7 +533,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/icon_youtupe"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم  "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -552,7 +559,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/pdf"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -578,7 +585,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/pdf_2"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -615,7 +622,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/icon_youtupe"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم  "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -641,7 +648,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/pdf"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
@@ -667,192 +674,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/pdf_2"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
+                    android:text="20/9/2022 تصميم تجربة المستخدم "
                     android:drawablePadding="4dp"
                     android:layout_weight="1"
                     android:textColor="#030303"
                     android:textSize="12sp"/>
 
             </LinearLayout>
-            <TextView
-                android:id="@+id/tv_Date_Course_6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:background="#F5F5F5"
-                android:gravity="center_vertical"
-                android:paddingEnd="17dp"
-                android:text="17سيبتمبر إلي 29 سيبتمبر "
-                android:textColor="#030303"
-                android:textSize="16sp"
-                android:paddingTop="12dp"
-                android:paddingBottom="16dp"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="15dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" التفاصيل..."
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/icon_youtupe"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
-                    android:drawablePadding="4dp"
-                    android:layout_weight="1"
-                    android:textColor="#030303"
-                    android:textSize="12sp"/>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="15dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" التفاصيل..."
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/pdf"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
-                    android:drawablePadding="4dp"
-                    android:layout_weight="1"
-                    android:textColor="#030303"
-                    android:textSize="12sp"/>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="15dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" التفاصيل..."
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/pdf_2"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
-                    android:drawablePadding="4dp"
-                    android:layout_weight="1"
-                    android:textColor="#030303"
-                    android:textSize="12sp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/tv_Date_Course"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:background="#F5F5F5"
-                android:gravity="center_vertical"
-                android:paddingEnd="17dp"
-                android:text="17سيبتمبر إلي 29 سيبتمبر "
-                android:textColor="#030303"
-                android:textSize="16sp"
-                android:paddingTop="12dp"
-                android:paddingBottom="16dp"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="15dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" التفاصيل..."
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/icon_youtupe"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
-                    android:drawablePadding="4dp"
-                    android:layout_weight="1"
-                    android:textColor="#030303"
-                    android:textSize="12sp"/>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="15dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" التفاصيل..."
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/pdf"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
-                    android:drawablePadding="4dp"
-                    android:layout_weight="1"
-                    android:textColor="#030303"
-                    android:textSize="12sp"/>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="15dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" التفاصيل..."
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/pdf_2"
-                    android:text="20/9/2022 الجرائم الالكترونية1 "
-                    android:drawablePadding="4dp"
-                    android:layout_weight="1"
-                    android:textColor="#030303"
-                    android:textSize="12sp"/>
-
-            </LinearLayout>
-
 
 
 
@@ -860,6 +688,7 @@
 
 
         </LinearLayout>
+
 
 
 
