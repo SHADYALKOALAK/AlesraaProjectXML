@@ -53,16 +53,17 @@ public class MassageTheAdmin extends AppCompatActivity {
                 customDialog.btnYes.setOnClickListener(v1 -> {
                     list.add(new ItemMassageStudentWithAdmin(nameParson,titelMassage,massage));
                     if (dBase.insertMassage(new ItemMassageStudentWithAdmin(nameParson,titelMassage,massage))) {
-                        Toast.makeText(context, "تم إرسال الرسالة", Toast.LENGTH_SHORT).show();
                         admin.notifyDataSetChanged();
                         dialog.dismiss();
-                        finish();
+
+                        startActivity(new Intent(context,SureSend.class));
                     }
                 });
                 customDialog.btnNo.setOnClickListener(v12 -> {
                     dialog.dismiss();
                 });
                 dialog = builder.create();
+                dialog.setCancelable(false);
                 dialog.show();
             }
 
@@ -94,7 +95,7 @@ public class MassageTheAdmin extends AppCompatActivity {
             startActivity(new Intent(context, Notices.class));
         });
         binding.iconArrow.setOnClickListener(v -> {
-            finish();
+            startActivity(new Intent(context,HomePageScreen.class));
         });
         //
     }
