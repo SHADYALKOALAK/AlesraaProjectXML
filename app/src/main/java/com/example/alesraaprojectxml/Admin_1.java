@@ -40,14 +40,6 @@ public class Admin_1 extends AppCompatActivity {
         binding.iconMassage.setOnClickListener(v -> {
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
         });
-        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(context,Admin_1.class));
-            }
-        });
-
-
 //
     }
 }

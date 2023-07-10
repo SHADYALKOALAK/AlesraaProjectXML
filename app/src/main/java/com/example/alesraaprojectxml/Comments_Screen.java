@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.alesraaprojectxml.databinding.ActivityCommentsScreenBinding;
 
@@ -36,12 +35,6 @@ public class Comments_Screen extends AppCompatActivity {
         binding.rv.setAdapter(adapterHomeWorkExport);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
         binding.rv.setLayoutManager(linearLayoutManager);
-        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(context,Admin_1.class));
-            }
-        });
 
 
 //

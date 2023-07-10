@@ -22,5 +22,6 @@ public class SearchCourse extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }

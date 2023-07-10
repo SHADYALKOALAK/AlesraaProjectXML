@@ -80,9 +80,13 @@ public class HomeWorkScreen extends AppCompatActivity {
         });
 
         binding.btnSend.setOnClickListener(v -> {
-
-            if (dataBase.insertPathFile(filePath)) {
-                Toast.makeText(context, "من حفظ الملف", Toast.LENGTH_SHORT).show();
+            int vi = binding.iconFile.getVisibility();
+            if (vi != 0) {
+                Toast.makeText(context, "يجب عليك اختار الملف أولا", Toast.LENGTH_SHORT).show();
+            } else {
+                if (dataBase.insertPathFile(filePath)) {
+                    Toast.makeText(context, "تم حفظ الملف", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
