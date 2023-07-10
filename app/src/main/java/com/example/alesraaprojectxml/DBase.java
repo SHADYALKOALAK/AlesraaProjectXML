@@ -15,7 +15,7 @@ public class DBase extends SQLiteOpenHelper {
     public static final String COL_NAME = "user_name";
     public static final String COL_NUMBER = "numberUser";
     public static final String COL_PASSWORD = "user_password";
-    public static final int DB_VERSION = 11;
+    public static final int DB_VERSION = 12;
     public static final String TN_COMMENT = "comment";
     public static final String COL_COMMENT = "massage";
     public static final String TN_MASSAGE = "massageToAdmin";
@@ -41,6 +41,7 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TN_MASSAGE + " ( " + COL_MASSAGE + " TEXT , "
                 + COL_NAME_PERSONAL + " TEXT , "
                 + COL_TITlE_MASSAGE + " TEXT)");
+        db.execSQL("CREATE TABLE FilePath (id INTEGER Primary key AUTOINCREMENT,path TEXT)");
         //
     }
 
@@ -49,6 +50,7 @@ public class DBase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TN_COMMENT);
         db.execSQL("DROP TABLE IF EXISTS " + Table_NAMEUSRT);
         db.execSQL("DROP TABLE IF EXISTS " + TN_MASSAGE);
+        db.execSQL("DROP TABLE IF EXISTS FilePath");
         onCreate(db);
 
     }
@@ -103,5 +105,21 @@ public class DBase extends SQLiteOpenHelper {
         return cursor;
 
     }
+
+    public boolean insertPathFile(String path) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("path", path);
+        long re = database.insert(TN_MASSAGE, null, values);
+        return re != -1;
+
+    }
+
+    public Cursor getPathFile() {
+        SQLiteDatabase dp = this.getReadableDatabase();
+        Cursor cursor = dp.rawQuery("Select * From FilePath", null);
+        return cursor;
+    }
+
 
 }
