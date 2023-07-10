@@ -110,7 +110,7 @@ public class DBase extends SQLiteOpenHelper {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("path", path);
-        long re = database.insert(TN_MASSAGE, null, values);
+        long re = database.insert("FilePath", null, values);
         return re != -1;
 
     }
