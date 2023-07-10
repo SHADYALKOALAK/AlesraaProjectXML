@@ -5,27 +5,33 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.alesraaprojectxml.databinding.DailogMarksBinding;
 import com.example.alesraaprojectxml.databinding.RvExporthomworkscreendesignBinding;
 import com.example.alesraaprojectxml.databinding.RvRecyclerviewDesignNoticesScreenBinding;
 
 import java.util.ArrayList;
 
 public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    Context context;
-    ArrayList<ItemRvHomeWorkExport> arrayList;
-    RvExporthomworkscreendesignBinding binding;
-    ViewHandle_inter viewHandle_inter;
+    private Context context;
+    private ArrayList<ItemRvHomeWorkExport> arrayList;
+    private RvExporthomworkscreendesignBinding binding;
+    private ViewHandle_inter viewHandle_inter;
+    private DailogMarksBinding dailogMarks;
+    private DBase dBase;
+    private AlertDialog dialog;
 
 
     public AdapterHomeWorkExport(Context context, ArrayList<ItemRvHomeWorkExport> arrayList, ViewHandle_inter viewHandle_inter) {
         this.context = context;
         this.arrayList = arrayList;
         this.viewHandle_inter = viewHandle_inter;
+        dBase = new DBase(context);
         //
     }
 
@@ -46,7 +52,22 @@ public class AdapterHomeWorkExport extends RecyclerView.Adapter<RecyclerView.Vie
 
         binding.getRoot().setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            AlertDialog dialog = builder.create();
+            dailogMarks = DailogMarksBinding.inflate(LayoutInflater.from(context));
+            builder.setView(dailogMarks.getRoot());
+            dailogMarks.imageAdd.setOnClickListener(v1 -> {
+                String mark = dailogMarks.editMarks.getText().toString().trim();
+                if (mark.isEmpty()) {
+                    dailogMarks.editMarks.setError("أدخل درجة الطالب ");
+                } else {
+                    if (dBase.insertMarkAdmin(mark, arrayList.get(position).name)) {
+                        Toast.makeText(context, "نم إرسال العلامة", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                }
+            });
+
+
+            dialog = builder.create();
             dialog.show();
         });
 

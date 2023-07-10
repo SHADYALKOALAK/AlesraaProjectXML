@@ -51,6 +51,12 @@ public class HomeWorkScreen extends AppCompatActivity {
             binding.tvName.setText(nameProfile);
         }
 
+        Cursor marks = dataBase.getMarkAdmin();
+        while (marks.moveToNext()) {
+            String mark = marks.getString(marks.getColumnIndex(marks.getColumnName(1)));
+            binding.tvMark.setText("الدرجة :" + mark);
+
+        }
 
         Cursor file = dataBase.getAdminFile();
         while (file.moveToNext()) {
@@ -141,14 +147,13 @@ public class HomeWorkScreen extends AppCompatActivity {
         binding.iconFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int visibility=binding.iconFile.getVisibility();
-                if (visibility == 0){
-                    startActivity(new Intent(context,HomeWorkDescription.class));
+                int visibility = binding.iconFile.getVisibility();
+                if (visibility == 0) {
+                    startActivity(new Intent(context, HomeWorkDescription.class));
 
                 }
             }
         });
-
 
 
     }

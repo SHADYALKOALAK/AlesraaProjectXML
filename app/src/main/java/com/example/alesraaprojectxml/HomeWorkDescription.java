@@ -3,8 +3,10 @@ package com.example.alesraaprojectxml;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -15,34 +17,32 @@ import java.util.ArrayList;
 
 public class HomeWorkDescription extends AppCompatActivity {
     private ArrayList<ItemRvHomeWork> arrayList;
-    Context context=HomeWorkDescription.this;
-    AdapterHomeWorkScreen adapter;
-
-
-
+    private Context context = HomeWorkDescription.this;
+    private AdapterHomeWorkScreen adapter;
+    private DBase dBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityHomeWorkDescriptionBinding binding;
-        binding=ActivityHomeWorkDescriptionBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeWorkDescriptionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        arrayList=new ArrayList<>();
-        arrayList.add(new ItemRvHomeWork("Baraa","10"));
-        arrayList.add(new ItemRvHomeWork("Baraa","5"));
-        arrayList.add(new ItemRvHomeWork("Baraa","9"));
-        arrayList.add(new ItemRvHomeWork("Baraa","10"));
-        arrayList.add(new ItemRvHomeWork("Baraa","10"));
-        arrayList.add(new ItemRvHomeWork("Baraa","10"));
+        arrayList = new ArrayList<>();
+        dBase = new DBase(context);
 
-        adapter=new AdapterHomeWorkScreen(arrayList,context);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
+        Cursor marks = dBase.getMarkAdmin();
+        while (marks.moveToNext()) {
+            @SuppressLint("Range") String mark = marks.getString(marks.getColumnIndex(marks.getColumnName(1)));
+            @SuppressLint("Range") String name = marks.getString(marks.getColumnIndex(marks.getColumnName(2)));
+            arrayList.add(new ItemRvHomeWork("تصميم واجهات الموبايل",mark));
+
+        }
+
+
+        adapter = new AdapterHomeWorkScreen(arrayList, context);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         binding.rv.setAdapter(adapter);
         binding.rv.setLayoutManager(linearLayoutManager);
-
-
-
-
 
 
     }
