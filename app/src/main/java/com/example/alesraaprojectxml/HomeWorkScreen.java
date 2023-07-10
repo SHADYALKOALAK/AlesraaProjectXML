@@ -95,7 +95,6 @@ public class HomeWorkScreen extends AppCompatActivity {
         filePickerLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(),
                 uri -> {
                     if (uri != null) {
-
                         // Handle the selected file here
                         String filePath = uri.getPath();
                         // Upload the file to your application or perform further operations
