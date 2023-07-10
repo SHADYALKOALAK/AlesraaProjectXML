@@ -33,8 +33,8 @@ public class UploodScreen extends AppCompatActivity {
         binding = ActivityUploodScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         dBase = new DBase(context);
-        list=new ArrayList<>();
-        adapterNotices=new AdapterNotices(context,list);
+        list = new ArrayList<>();
+        adapterNotices = new AdapterNotices(context, list);
         Intent intent = getIntent();
         int flag = intent.getIntExtra("flag", -1);
 
@@ -56,6 +56,12 @@ public class UploodScreen extends AppCompatActivity {
             binding.editMoreInfo.setVisibility(View.GONE);
             binding.layoutFile.setVisibility(View.GONE);
             binding.editLink.setVisibility(View.GONE);
+        } else if (flag == 5) {
+            binding.editLink.setVisibility(View.VISIBLE);
+            binding.editMoreInfo.setVisibility(View.GONE);
+            binding.layoutFile.setVisibility(View.GONE);
+            binding.editDescription.setVisibility(View.VISIBLE);
+            binding.editTitle.setVisibility(View.VISIBLE);
         }
 
 
@@ -92,6 +98,14 @@ public class UploodScreen extends AppCompatActivity {
                 case 4:
                     if (!location.isEmpty() && !dis.isEmpty()) {
                         if (dBase.insertAdminDis(new UpLoadeAdminModel(location, dis))) {
+                            dBase.insertNotifications("تم رفع مهمة جديدة");
+                            Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                case 5:
+                    if (!location.isEmpty() && !dis.isEmpty() && !link.isEmpty()) {
+                        if (dBase.insertViedo(new UpLoadeAdminModel(location, dis, link))) {
                             dBase.insertNotifications("تم رفع مهمة جديدة");
                             Toast.makeText(context, "تم الرفع", Toast.LENGTH_SHORT).show();
                             finish();

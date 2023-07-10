@@ -104,6 +104,7 @@
                 android:src="@drawable/img_3" />
 
             <TextView
+                android:id="@+id/tv_dis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
