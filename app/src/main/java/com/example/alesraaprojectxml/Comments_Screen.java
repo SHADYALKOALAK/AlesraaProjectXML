@@ -1,6 +1,5 @@
 package com.example.alesraaprojectxml;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -63,15 +62,10 @@ public class Comments_Screen extends AppCompatActivity implements AdapterHomeWor
             startActivity(new Intent(context, MassagesStudentWethAdmin.class));
         });
 
-
-
     }
 
     @Override
-    public void ClickHandle(int pos) {
-
-
-
+    public void ClickHandle(int pos ) {
 
 
 
