@@ -81,6 +81,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
+            android:id="@+id/icon_model"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -104,6 +105,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/icon_homework"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -127,6 +129,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/icon_education"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -151,6 +154,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/iconProfile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"

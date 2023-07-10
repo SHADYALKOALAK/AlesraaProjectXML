@@ -69,7 +69,7 @@ public class MassageTheAdmin extends AppCompatActivity {
 
         });
         binding.imageProfile.setOnClickListener(v -> {
-            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
         });
         binding.iconHomework.setOnClickListener(v -> {
             startActivity(new Intent(context, HomeWorkScreen.class));
@@ -77,7 +77,7 @@ public class MassageTheAdmin extends AppCompatActivity {
         binding.iconModel.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://ar.israa.edu.ps"));
+            intent.setData(Uri.parse("https://elearn.israa.edu.ps/"));
             startActivity(intent);
         });
         Cursor cursor = dBase.getComment();
@@ -86,7 +86,7 @@ public class MassageTheAdmin extends AppCompatActivity {
             binding.tvName.setText(nameProfile);
         }
         binding.iconProfileScreen.setOnClickListener(v -> {
-            Toast.makeText(context, "الصفحة غير متوفرة الان", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "https://student.israa.edu.ps/", Toast.LENGTH_SHORT).show();
         });
         binding.iconEducation.setOnClickListener(v -> {
             startActivity(new Intent(context, HomePageScreen.class));

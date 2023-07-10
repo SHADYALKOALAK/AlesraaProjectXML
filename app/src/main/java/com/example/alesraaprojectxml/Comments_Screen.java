@@ -1,9 +1,7 @@
 package com.example.alesraaprojectxml;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -24,10 +22,6 @@ public class Comments_Screen extends AppCompatActivity implements AdapterHomeWor
 
 
 
-
-
-
-    ///baraaa
 
     @SuppressLint("Range")
     @Override

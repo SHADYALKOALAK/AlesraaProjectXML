@@ -116,6 +116,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
+            android:id="@+id/icon_model"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -124,6 +125,7 @@
             android:orientation="vertical">
 
             <ImageView
+
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/model" />
@@ -138,6 +140,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/icon_homework"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -160,6 +163,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/icon_education"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -182,6 +186,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/iconProfile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
